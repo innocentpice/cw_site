@@ -1,11 +1,11 @@
-<div class="container">
+<div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <div class="row">
-                <div class="col-xs-12 col-md-7 inline">
+                <div class="col-xs-12 col-md-6 inline">
                     ORDER NO. : <?=$this->taskID?>
                 </div>
-                <div class="col-xs-7 col-md-3 inline">
+                <div class="col-xs-7 col-md-4 inline">
                     STATUS : 
                     <?php 
                         if($this->taskStatus == 1){

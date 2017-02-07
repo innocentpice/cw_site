@@ -1,4 +1,4 @@
-<div style="margin-top:5%;" class="container">
+<div>
     <form class="form-horizontal" method="post" onSubmit="if(!confirm('ต้องการบันทึกข้อมูลหรือไม่ ?')){return false;}">
         <div class="form-group">
             <label class="control-label col-sm-2" for="JOB_NO">JOB NO.</label>
