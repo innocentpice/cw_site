@@ -1,4 +1,4 @@
-<div style="margin-top:5%;" class="container">
+<div>
     <form id="createTaskForm" name="createTaskForm" class="form-horizontal" method="post">
         <div class="form-group">
             <label class="control-label col-sm-2" for="JOB_NO">JOB NO.</label>

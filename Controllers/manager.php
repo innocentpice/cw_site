@@ -18,12 +18,58 @@ class manager extends Controller {
         }
     }
     function index(){
-        $this->view->render('header');
-        $this->view->render('manager/menu_panel');
-        $this->view->render('manager/index');
-        $this->view->render('footer');
+        $page[0] = 'manager/index';
+        $this->RederAsPanel($page);
         
     }
+    
+    // Render As Panel
+    
+    private function RederAsPanel($page){
+        $this->view->render('header');
+        $this->view->render('manager/panel_menu');
+        foreach($page as $page){
+            $this->view->render($page);
+        }
+        $this->view->render('manager/panel_end');
+        $this->view->render('footer');
+    }
+    
+    // Auth
+    
+    private function auth(){
+        if(!isset($_SESSION['username'])){
+            if($_POST['auth']){
+                $this->loadModel('auth');
+                $result = $this->auth->login($_POST['username'],$_POST['password']);
+                if($result){
+                    return true;
+                }else{
+                    $this->view->msgLogin = 'Username or Password incorrect ';
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }else{
+            return true;
+        }
+    }
+    
+    
+    function logout(){
+        $this->loadModel('auth');
+        $this->auth->logout();
+        $this->view->render('header');
+        $this->view->render('footer');
+        echo '<script>$(document).ready(function(){
+            alert("LOGOFF");
+            window.location = "'. URL_Path .'";
+        });</script>';
+    }
+    
+    // task
+    
     function tasklist(){
         $this->loadModel('task');
         
@@ -42,10 +88,8 @@ class manager extends Controller {
         
         $this->view->JSInject[1] = URL_Public.'/js/tasklist.js';
         
-        $this->view->render('header');
-        $this->view->render('manager/menu_panel');
-        $this->view->render('manager/tasklist');
-        $this->view->render('footer');
+        $page[0] = 'manager/tasklist';
+        $this->RederAsPanel($page);
     }
     function taskedit(){
         if(!isset($_GET['JOB_NO'])){
@@ -81,10 +125,9 @@ class manager extends Controller {
             return false;
         }else{
             $this->view->JobData = $JobData[0];
-            $this->view->render('header');
-            $this->view->render('manager/menu_panel');
-            $this->view->render('manager/edittask');
-            $this->view->render('footer');
+            
+            $page[0] = 'manager/edittask';
+            $this->RederAsPanel($page);
         }
     }
     private function deletetask($JOB_NO){
@@ -116,28 +159,9 @@ class manager extends Controller {
             }
         }
         $this->view->JSInject[1] = URL_Public.'/js/createtask.js';
-        $this->view->render('header');
-        $this->view->render('manager/menu_panel');
-        $this->view->render('manager/createtask');
-        $this->view->render('footer');
-    }
-    private function auth(){
-        if(!isset($_SESSION['username'])){
-            if($_POST['auth']){
-                $this->loadModel('auth');
-                $result = $this->auth->login($_POST['username'],$_POST['password']);
-                if($result){
-                    return true;
-                }else{
-                    $this->view->msgLogin = 'Username or Password incorrect ';
-                    return false;
-                }
-            }else{
-                return false;
-            }
-        }else{
-            return true;
-        }
+        
+        $page[0] = 'manager/createtask';
+        $this->RederAsPanel($page);
     }
     function tasklog(){
         if(!isset($_GET['JOB_NO'])){
@@ -167,19 +191,16 @@ class manager extends Controller {
         $this->view->taskID = $this->view->taskLog[0][0][1];
         
         $this->view->JSInject[1] = URL_Public.'/js/tasklog.js';
-        $this->view->render('header');
-        $this->view->render('manager/menu_panel');
-        $this->view->render('manager/tasklog');
-        $this->view->render('footer');
+        
+        $page[0] = 'manager/tasklog';
+        $this->RederAsPanel($page);
     }
-    function logout(){
-        $this->loadModel('auth');
-        $this->auth->logout();
-        $this->view->render('header');
-        $this->view->render('footer');
-        echo '<script>$(document).ready(function(){
-            alert("LOGOFF");
-            window.location = "'. URL_Path .'";
-        });</script>';
+    
+    // Supplier Management.
+    
+    function supplier(){
+        $page[0] = 'manager/supplier';
+        $this->RederAsPanel($page);
     }
+    
 }

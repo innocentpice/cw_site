@@ -1,6 +1,6 @@
 <?php
-
-    echo '<table class="table table-striped table-hover table-bordered">';
+    
+    echo '<div class="table-responsive"><table class="table table-striped table-hover table-bordered">';
     $thead_title = ['NO.','JOB NO.','NAME','Detail','Quantity','START','DEADLINE'];
     $thead_status[0] = 'STATUS => Order Received';
     $thead_status[1] = 'STATUS => Processing';
@@ -50,7 +50,7 @@
     }
     echo '</tbody>';
     }
-    echo '</table>';
+    echo '</table></div>';
 ?>
 
 <div id="DELETETASK" class="modal fade" role="dialog">
