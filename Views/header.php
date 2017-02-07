@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title><?php if(isset($this->PageTitle)){echo $this->PageTitle;}else{echo 'CWGREAT.CO.TH';}?></title>
+        <title><?php if(isset($this->PageTitle)){echo $this->PageTitle;}else{echo 'CWGREAT Co.,Ltd.';}?></title>
         
         <?php 
             if(isset($this->clearBOOSTRAP)){
