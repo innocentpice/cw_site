@@ -4,7 +4,7 @@
 
 - Suppile Manage. // Making
 - Order No. Genarator.
-- Staus Ans List.
+- Status Ans List.
 - Monitor Data.
 
 
