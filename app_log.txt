@@ -2,7 +2,7 @@
 
 งานที่ต้องทำ
 
-- Suppile Manage.
+- Suppile Manage. // Making
 - Order No. Genarator.
 - Staus Ans List.
 - Monitor Data.
