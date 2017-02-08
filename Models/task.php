@@ -89,6 +89,19 @@ class task extends Model {
         $result = $sth->errorCode();
         return $result;
     }
+    function ansTaskLog($STATUS = NULL){
+        $NO = array();
+        $sql = "SELECT  `DESCRIPTION` , COUNT( * ) AS  `NO` FROM TASK_LOG ";
+        if(isset($STATUS)){
+            $NO = array(':STATUS' => $STATUS);
+            $sql .= "WHERE STATUS = :STATUS ";
+        }
+        $sql .=  "GROUP BY `DESCRIPTION` ORDER BY `NO` DESC LIMIT 10";
+        $sth = $this->db->prepare($sql);
+        $sth->execute($NO);
+        $result = $sth->fetchAll();
+        return $result;
+    }
     function showtasklog($J_NO,$STATUS = NULL){
         $NO = array(':J_NO' => $J_NO);
         $sql = "SELECT * FROM TASK_LOG WHERE JOB_NO = :J_NO";

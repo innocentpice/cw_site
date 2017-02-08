@@ -28,7 +28,7 @@
         </div>
         <div class="panel-body collapse" id="ADDTASKLOG">
             <div class="well">
-                <form class="form-inline" method="post">
+                <form class="form-inline" method="post" id="FORM_ADDLOG">
                   <div class="form-group">
                     <div class="input-group">
                       <div class="input-group-addon"><i class="glyphicon glyphicon-tag"></i></div>
@@ -38,6 +38,10 @@
                   <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> ADD</button>
                   <input type="hidden" class="hidden" name="STATUS" value="<?=$this->taskStatus?>">
                 </form>
+                <div class="clearfix"></div>
+                <div><h3>คำที่ใช้บ่อย : </h3>
+                <?php foreach($this->ansTask as $ans){ ?><button class="btn btn-xs tag label label-info ansPresent" style="padding:3px;margin-right:3px;"><?=$ans[0]?></button><?php }?>
+                </div>
             </div>
         </div>
         <div class="panel-body">

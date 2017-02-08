@@ -180,17 +180,16 @@ class manager extends Controller {
         if(isset($_POST['ADDTASKLOG'])){
             $this->task->addtasklog($_GET['JOB_NO'],$_POST['ADDTASKLOG'],$_POST['STATUS']);
         }
-        
         $JOB_NO = $_GET['JOB_NO'];
-        
         $this->view->taskLog[0] = $this->task->showtasklog($JOB_NO,1);
         $this->view->taskLog[1] = $this->task->showtasklog($JOB_NO,2);
         $this->view->taskLog[2] = $this->task->showtasklog($JOB_NO,3);
         $taskStatus = $this->task->checkjob($JOB_NO);
         $this->view->taskStatus = $taskStatus[0]['STATUS'];$taskStatus = null;
-        $this->view->taskID = $this->view->taskLog[0][0][1];
-        
+        $this->view->taskID = $JOB_NO;
+        $this->view->ansTask = $this->task->ansTaskLog($this->view->taskStatus);
         $this->view->JSInject[1] = URL_Public.'/js/tasklog.js';
+        
         
         $page[0] = 'manager/tasklog';
         $this->RederAsPanel($page);
