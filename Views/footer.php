@@ -1,4 +1,4 @@
-<footer class="ui fluid container grid" style="margin-top:3rem;padding-bottom:2rem;">
+<footer class="ui fluid container grid clearfix" style="margin-top:3rem;padding-bottom:2rem;">
     <div class="ui center aligned column text-center">
         Copyright © 2016 - 2017 CWGREAT Co.,Ltd All rights reserved.
     </div>

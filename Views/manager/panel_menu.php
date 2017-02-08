@@ -1,29 +1,41 @@
 <nav class="nav-side-menu col-sm-3">
     <div class="brand">
-      <a href="<?=URL_Path.'/manager'?>">Management System</a>
+      <a href="<?=URL_Path.'/manager'?>">CWG. Management System</a>
     </div>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
       <div class="menu-list">
         <ul id="menu-content" class="menu-content collapse out">
-            <li>
-              <a href="#">
+            <a href="#"><li class="primary_nav">
               <i class="fa fa-home fa-lg"></i> HOME
-              </a>
-            </li>
+            </li></a>
 
-            <li  data-toggle="collapse" data-target="#nav_task" class="collapsed">
-              <a href="#"><i class="fa fa-money fa-lg"></i> JOB Manage <span class="arrow"></span></a>
+            <li data-toggle="collapse" data-target="#nav_task" class="collapsed primary_nav">
+              <a href="#"><i class="fa fa-money fa-lg"></i> JOB<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_task">
-                <li><a href="<?=URL_Path.'/manager/tasklist'?>">JOB VIEW</a></li>
-                <li><a href="<?=URL_Path.'/manager/createtask'?>">CREATE JOB</a></li>
+                <a href="<?=URL_Path.'/manager/tasklist'?>"><li>JOB VIEW</li></a>
+                <a href="<?=URL_Path.'/manager/createtask'?>"><li>CREATE JOB</li></a>
             </ul>
             
-            <li  data-toggle="collapse" data-target="#nav_supplier" class="collapsed">
-              <a href="#"><i class="fa fa-truck fa-lg"></i> SUPPLIER Manage <span class="arrow"></span></a>
+            <li data-toggle="collapse" data-target="#nav_supplier" class="collapsed primary_nav">
+              <a href="#"><i class="fa fa-truck fa-lg"></i> SUPPLIER<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_supplier">
-                <li><a href="<?=URL_Path.'/manager/supplier'?>">SUPPLIER VIEW</a></li>
+                <a href="<?=URL_Path.'/manager/supplier'?>"><li>SUPPLIER VIEW</li></a>
+            </ul>
+            
+            <a href="#"><li class="primary_nav">
+              <i class="fa fa-book fa-lg"></i> MANUAL 
+            </li></a>
+            <a href="#"><li class="primary_nav">
+              <i class="fa fa-question fa-lg"></i> HELP
+            </li></a>
+            
+            <li  data-toggle="collapse" data-target="#nav_auth" class="collapsed primary_nav">
+              <a href="#"><i class="fa fa-gear fa-lg"></i> AUTH<span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="nav_auth">
+                <a href="<?=URL_Path.'/manager/logout'?>"><li>LOGOUT<i class="fa fa-sign-out fa-md "></i></li></a>
             </ul>
         </ul>
      </div>
