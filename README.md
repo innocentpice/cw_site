@@ -1,12 +1,10 @@
-# cw_site
-
 :: 06/02/2560 ::
 
 งานที่ต้องทำ
 
-- Suppile Manage.
+- Suppile Manage. // Making
 - Order No. Genarator.
-- Staus Ans List.
+- Status Ans List. // SUCCESS
 - Monitor Data.
 
 
