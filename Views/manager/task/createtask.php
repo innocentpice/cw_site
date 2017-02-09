@@ -1,3 +1,6 @@
+<header class="text-center" style="margin-bottom:2rem;">
+    <h1>JOB Management.</h1>
+</header>
 <div>
     <form id="createTaskForm" name="createTaskForm" class="form-horizontal" method="post">
         <div class="form-group">

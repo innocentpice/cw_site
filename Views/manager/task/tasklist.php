@@ -1,3 +1,6 @@
+<header class="text-center" style="margin-bottom:2rem;">
+    <h1>JOB Management.</h1>
+</header>
 <?php
     
     echo '<div class="table-responsive"><table class="table table-striped table-hover table-bordered">';

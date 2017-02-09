@@ -18,7 +18,6 @@
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
             <link rel="stylesheet" href="<?=URL_Public.'/css/custom.css'?>">
-        
         <?php
             if(isset($this->CSSInject)){
                 foreach ($this->CSSInject as $CSS) {

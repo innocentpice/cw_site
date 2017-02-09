@@ -1,3 +1,6 @@
+<header class="text-center" style="margin-bottom:2rem;">
+    <h1>JOB Management.</h1>
+</header>
 <div>
     <form class="form-horizontal" method="post" onSubmit="if(!confirm('ต้องการบันทึกข้อมูลหรือไม่ ?')){return false;}">
         <div class="form-group">

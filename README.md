@@ -1,3 +1,15 @@
+:: 09/02/2560 ::
+
+- Suppile Manage. // 
+> ADD DATABASE 
+> ADD PAGE SUP VIEW , ADD SUP
+
+UPDATE icon at menubar
+
+-- TODO --
+- Order No. Genarator.
+- Monitor Data.
+
 :: 06/02/2560 ::
 
 งานที่ต้องทำ

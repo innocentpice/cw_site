@@ -33,6 +33,7 @@ class manager extends Controller {
         }
         $this->view->render('manager/panel_end');
         $this->view->render('footer');
+        
     }
     
     // Auth
@@ -88,7 +89,7 @@ class manager extends Controller {
         
         $this->view->JSInject[1] = URL_Public.'/js/tasklist.js';
         
-        $page[0] = 'manager/tasklist';
+        $page[0] = 'manager/task/tasklist';
         $this->RederAsPanel($page);
     }
     function taskedit(){
@@ -126,7 +127,7 @@ class manager extends Controller {
         }else{
             $this->view->JobData = $JobData[0];
             
-            $page[0] = 'manager/edittask';
+            $page[0] = 'manager/task/edittask';
             $this->RederAsPanel($page);
         }
     }
@@ -160,7 +161,7 @@ class manager extends Controller {
         }
         $this->view->JSInject[1] = URL_Public.'/js/createtask.js';
         
-        $page[0] = 'manager/createtask';
+        $page[0] = 'manager/task/createtask';
         $this->RederAsPanel($page);
     }
     function tasklog(){
@@ -191,15 +192,42 @@ class manager extends Controller {
         $this->view->JSInject[1] = URL_Public.'/js/tasklog.js';
         
         
-        $page[0] = 'manager/tasklog';
+        $page[0] = 'manager/task/tasklog';
         $this->RederAsPanel($page);
     }
     
     // Supplier Management.
     
     function supplier(){
-        $page[0] = 'manager/supplier';
+        $this->loadModel('supplier');
+        $this->view->supplier = $this->supplier->viewsup();
+        
+        $page[0] = 'manager/supplier/supplier';
         $this->RederAsPanel($page);
     }
     
+    function addsup(){
+        if(isset($_POST['ADDSUP'])){
+            $query['SUP_ABNAME'] = $_POST['SUP_ABNAME'];
+            $query['SUP_NAME'] = $_POST['SUP_NAME'];
+            $query['SUP_ADDRESS'] = $_POST['SUP_ADDRESS'];
+            $query['SUP_TEL'] = $_POST['SUP_TEL'];
+            $query['SUP_EMAIL'] = $_POST['SUP_EMAIL'];
+            
+            $this->loadModel('supplier');
+            $result = $this->supplier->addsup($query);
+            if($result == 23000){
+                $this->view->msgCreate = 'Available';
+                $this->view->DataCreate = $data;
+            }else if($result == 00000){
+                $this->view->msgCreate = 'Success';
+            }else{
+                $this->view->msgCreate = 'Error';
+            }
+        }
+        
+        $this->view->JSInject[1] = URL_Public.'/js/addsup.js';
+        $page[0] = 'manager/supplier/addsup';
+        $this->RederAsPanel($page);
+    }
 }

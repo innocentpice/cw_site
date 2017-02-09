@@ -1,4 +1,4 @@
-<nav class="nav-side-menu col-sm-3">
+<nav class="nav-side-menu col-sm-3 col-lg-2">
     <div class="brand">
       <a href="<?=URL_Path.'/manager'?>">CWG. Management System</a>
     </div>
@@ -13,15 +13,16 @@
               <a href="#"><i class="fa fa-money fa-lg"></i> JOB<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_task">
-                <a href="<?=URL_Path.'/manager/tasklist'?>"><li>JOB VIEW</li></a>
-                <a href="<?=URL_Path.'/manager/createtask'?>"><li>CREATE JOB</li></a>
+                <a href="<?=URL_Path.'/manager/tasklist'?>"><li><i class="fa fa-list-ul fa-md"></i>VIEW</li></a>
+                <a href="<?=URL_Path.'/manager/createtask'?>"><li><i class="fa fa-plus-square fa-md"></i>CREATE</li></a>
             </ul>
             
             <li data-toggle="collapse" data-target="#nav_supplier" class="collapsed primary_nav">
               <a href="#"><i class="fa fa-truck fa-lg"></i> SUPPLIER<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_supplier">
-                <a href="<?=URL_Path.'/manager/supplier'?>"><li>SUPPLIER VIEW</li></a>
+                <a href="<?=URL_Path.'/manager/supplier'?>"><li><i class="fa fa-list-ul fa-md"></i>VIEW</li></a>
+                <a href="<?=URL_Path.'/manager/addsup'?>"><li><i class="fa fa-plus-square fa-md"></i>ADD</li></a>
             </ul>
             
             <a href="#"><li class="primary_nav">
@@ -41,5 +42,5 @@
      </div>
 </nav>
 
-<div class="container-fluid clearfix col-sm-9 col-sm-offset-3" style="padding-top:5%;min-height:600px;">
+<div class="container-fluid clearfix col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2" style="padding-top:3rem;min-height:600px;">
   
