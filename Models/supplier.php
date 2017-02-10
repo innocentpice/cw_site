@@ -4,8 +4,12 @@ class supplier extends Model {
     function __construct(){
         parent::__construct();
     }
-    function viewsup(){
-        $sql = "SELECT * FROM SUPPLIER ORDER BY NO DESC";
+    function viewsup($NO=NULL){
+        if(isset($NO)){
+            $sql = "SELECT * FROM SUPPLIER WHERE NO = '".$NO."'";
+        }else{
+            $sql = "SELECT * FROM SUPPLIER ORDER BY NO DESC";
+        }
         $sth = $this->db->query($sql);
         $result = $sth->fetchAll();
         return $result;
@@ -17,8 +21,33 @@ class supplier extends Model {
         $SUP_TEL = $query['SUP_TEL'];
         $SUP_EMAIL = $query['SUP_EMAIL'];
         
-        $sql = "INSERT INTO SUPPLIER ".
-        "VALUES (NULL, :SUP_ABNAME, :SUP_NAME, :SUP_ADDRESS, :SUP_TEL, :SUP_EMAIL)";
+        $sql = "INSERT INTO SUPPLIER (SUP_ABNAME, SUP_NAME, SUP_ADDRESS, SUP_TEL, SUP_EMAIL)".
+        " VALUES (:SUP_ABNAME, :SUP_NAME, :SUP_ADDRESS, :SUP_TEL, :SUP_EMAIL)";
+        $NO = array(
+            ':SUP_ABNAME' => $SUP_ABNAME,
+            ':SUP_NAME' => $SUP_NAME,
+            ':SUP_ADDRESS' => $SUP_ADDRESS,
+            ':SUP_TEL' => $SUP_TEL,
+            ':SUP_EMAIL' => $SUP_EMAIL
+        );
+        $sth = $this->db->prepare($sql);
+        $sth->execute($NO);
+        $result = $sth->errorCode();
+        return $result;
+    }
+    function editsup($query){
+        $SUP_ABNAME = $query['SUP_ABNAME'];
+        $SUP_NAME = $query['SUP_NAME'];
+        $SUP_ADDRESS = $query['SUP_ADDRESS'];
+        $SUP_TEL = $query['SUP_TEL'];
+        $SUP_EMAIL = $query['SUP_EMAIL'];
+        $sql = "UPDATE SUPPLIER SET ".
+            "SUP_ABNAME = :SUP_ABNAME, ".
+            "SUP_NAME = :SUP_NAME, ".
+            "SUP_ADDRESS = :SUP_ADDRESS, ".
+            "SUP_TEL = :SUP_TEL, ".
+            "SUP_EMAIL = :SUP_EMAIL";
+        $sql.= " WHERE NO =".$query['NO'];
         $NO = array(
             ':SUP_ABNAME' => $SUP_ABNAME,
             ':SUP_NAME' => $SUP_NAME,

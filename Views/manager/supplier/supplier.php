@@ -24,7 +24,7 @@
                 <td><?=$supplier['SUP_ADDRESS']?></td>
                 <td><?=$supplier['SUP_TEL']?></td>
                 <td><?=$supplier['SUP_EMAIL']?></td>
-                <td><button class="btn btn-sm btn-warning"><i class="fa fa-cog fa-sm"></i></button></td>
+                <td><a href="<?=URL_Path.'/manager/editsup?SUP_NO='.$supplier['NO']?>" class="btn btn-sm btn-warning"><i class="fa fa-cog fa-sm"></i></a></td>
                 <td><button class="btn btn-sm btn-danger" onClick="DELETESUP_POPUP('<?=$supplier['SUP_ABNAME']?>');" data-toggle="modal" data-target="#DELETESUP"><i class="fa fa-trash-o fa-sm"></i></button></td>
             </tr>
             <?php }?>

@@ -68,6 +68,12 @@ class manager extends Controller {
             window.location = "'. URL_Path .'";
         });</script>';
     }
+    // ERROR 
+    
+    function ShowError(){
+        $page[0] = 'manager/error';
+        $this->RederAsPanel($page);
+    }
     
     // task
     
@@ -94,7 +100,7 @@ class manager extends Controller {
     }
     function taskedit(){
         if(!isset($_GET['JOB_NO'])){
-            echo 'NOT PARAM.';
+            $this->ShowError();
             return false;
         }else{
             $JOB_NO = $_GET['JOB_NO'];
@@ -121,8 +127,8 @@ class manager extends Controller {
         
         
         $JobData = $this->task->checkjob($JOB_NO);
-        if(!isset($JobData[0][0])){
-            echo 'NOT EXCIST.';
+        if(empty($JobData[0][0])){
+            $this->ShowError();
             return false;
         }else{
             $this->view->JobData = $JobData[0];
@@ -157,7 +163,7 @@ class manager extends Controller {
     }
     function tasklog(){
         if(!isset($_GET['JOB_NO'])){
-            echo 'NOT PARAM';
+            $this->ShowError();
             return false;
         }
         
@@ -173,10 +179,14 @@ class manager extends Controller {
             $this->task->addtasklog($_GET['JOB_NO'],$_POST['ADDTASKLOG'],$_POST['STATUS']);
         }
         $JOB_NO = $_GET['JOB_NO'];
+        $taskStatus = $this->task->checkjob($JOB_NO);
+        if($taskStatus == NULL){
+            $this->ShowError();
+            return false;
+        }
         $this->view->taskLog[0] = $this->task->showtasklog($JOB_NO,1);
         $this->view->taskLog[1] = $this->task->showtasklog($JOB_NO,2);
         $this->view->taskLog[2] = $this->task->showtasklog($JOB_NO,3);
-        $taskStatus = $this->task->checkjob($JOB_NO);
         $this->view->taskStatus = $taskStatus[0]['STATUS'];$taskStatus = null;
         $this->view->taskID = $JOB_NO;
         $this->view->ansTask = $this->task->ansTaskLog($this->view->taskStatus);
@@ -216,7 +226,7 @@ class manager extends Controller {
             $result = $this->supplier->addsup($query);
             if($result == 23000){
                 $this->view->msgCreate = 'Available';
-                $this->view->DataCreate = $data;
+                $this->view->DataCreate = $query;
             }else if($result == 00000){
                 $this->view->msgCreate = 'Success';
             }else{
@@ -226,6 +236,43 @@ class manager extends Controller {
         
         $this->view->JSInject[1] = URL_Public.'/js/addsup.js';
         $page[0] = 'manager/supplier/addsup';
+        $this->RederAsPanel($page);
+    }
+    function editsup(){
+        if(empty($_GET['SUP_NO'])){
+            $this->ShowError();
+            return false;
+        }
+        
+        $this->loadModel('supplier');
+        
+        if(isset($_POST['EDITSUP'])){
+            $query['SUP_ABNAME'] = $_POST['SUP_ABNAME'];
+            $query['SUP_NAME'] = $_POST['SUP_NAME'];
+            $query['SUP_ADDRESS'] = $_POST['SUP_ADDRESS'];
+            $query['SUP_TEL'] = $_POST['SUP_TEL'];
+            $query['SUP_EMAIL'] = $_POST['SUP_EMAIL'];
+            $query['NO'] = $_GET['SUP_NO'];
+            
+            $result = $this->supplier->editsup($query);
+            if($result == 23000){
+                $this->view->msgUpdate = 'Available';
+            }else if($result == 00000){
+                $this->view->msgUpdate = 'Success';
+            }else{
+                $this->view->msgUpdate = 'Error';
+            }
+        }
+        $this->view->supplier = $this->supplier->viewsup($_GET['SUP_NO']);
+        if($this->view->supplier[0] == ''){
+            $this->ShowError();
+            return false;
+        }
+        if(isset($query)){
+            $this->view->supplier[0] = $query;
+        }
+        $this->view->JSInject[1] = URL_Public.'/js/editsup.js';
+        $page[0] = 'manager/supplier/editsup';
         $this->RederAsPanel($page);
     }
 }
