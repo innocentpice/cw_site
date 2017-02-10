@@ -36,7 +36,7 @@
               <a href="#"><i class="fa fa-gear fa-lg"></i> AUTH<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_auth">
-                <a href="<?=URL_Path.'/manager/logout'?>"><li>LOGOUT<i class="fa fa-sign-out fa-md "></i></li></a>
+                <a href="<?=URL_Path.'/manager/logout'?>"><li><i class="fa fa-sign-out fa-md "></i>LOGOUT</li></a>
             </ul>
         </ul>
      </div>

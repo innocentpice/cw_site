@@ -131,15 +131,6 @@ class manager extends Controller {
             $this->RederAsPanel($page);
         }
     }
-    private function deletetask($JOB_NO){
-        $this->loadModel('task');
-        $result = $this->deletetask($JOB_NO);
-        if($result = 00000){
-            return true;
-        }else{
-            return false;
-        }
-    }
     function createtask(){
         if(isset($_POST['CREATE'])){
             $this->loadModel('task');
@@ -200,12 +191,19 @@ class manager extends Controller {
     
     function supplier(){
         $this->loadModel('supplier');
+        if(isset($_POST['DEL_SUP'])){
+            $result = $this->supplier->deleteSup($_POST['SUP_ABNAME']);
+            if($result == 00000){
+                $this->view->msgDelete = true;
+            }else{
+                $this->view->msgDelete = false;
+            }
+        }
         $this->view->supplier = $this->supplier->viewsup();
-        
+        $this->view->JSInject[1] = URL_Public.'/js/suplist.js';
         $page[0] = 'manager/supplier/supplier';
         $this->RederAsPanel($page);
     }
-    
     function addsup(){
         if(isset($_POST['ADDSUP'])){
             $query['SUP_ABNAME'] = $_POST['SUP_ABNAME'];

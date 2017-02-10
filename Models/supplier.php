@@ -5,7 +5,7 @@ class supplier extends Model {
         parent::__construct();
     }
     function viewsup(){
-        $sql = "SELECT * FROM SUPPLIER";
+        $sql = "SELECT * FROM SUPPLIER ORDER BY NO DESC";
         $sth = $this->db->query($sql);
         $result = $sth->fetchAll();
         return $result;
@@ -26,6 +26,14 @@ class supplier extends Model {
             ':SUP_TEL' => $SUP_TEL,
             ':SUP_EMAIL' => $SUP_EMAIL
         );
+        $sth = $this->db->prepare($sql);
+        $sth->execute($NO);
+        $result = $sth->errorCode();
+        return $result;
+    }
+    function deleteSup($SUP_ABNAME){
+        $sql = 'DELETE FROM SUPPLIER WHERE SUP_ABNAME = :SUP_ABNAME';
+        $NO = array(':SUP_ABNAME' => $SUP_ABNAME);
         $sth = $this->db->prepare($sql);
         $sth->execute($NO);
         $result = $sth->errorCode();
