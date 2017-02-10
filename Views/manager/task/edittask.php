@@ -1,6 +1,9 @@
+<<<<<<< HEAD:Views/manager/task/edittask.php
 <header class="text-center" style="margin-bottom:2rem;">
     <h1>JOB Management.</h1>
 </header>
+=======
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa:Views/manager/edittask.php
 <div>
     <form class="form-horizontal" method="post" onSubmit="if(!confirm('ต้องการบันทึกข้อมูลหรือไม่ ?')){return false;}">
         <div class="form-group">

@@ -33,7 +33,6 @@ class manager extends Controller {
         }
         $this->view->render('manager/panel_end');
         $this->view->render('footer');
-        
     }
     
     // Auth
@@ -89,7 +88,11 @@ class manager extends Controller {
         
         $this->view->JSInject[1] = URL_Public.'/js/tasklist.js';
         
+<<<<<<< HEAD
         $page[0] = 'manager/task/tasklist';
+=======
+        $page[0] = 'manager/tasklist';
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa
         $this->RederAsPanel($page);
     }
     function taskedit(){
@@ -127,8 +130,22 @@ class manager extends Controller {
         }else{
             $this->view->JobData = $JobData[0];
             
+<<<<<<< HEAD
             $page[0] = 'manager/task/edittask';
             $this->RederAsPanel($page);
+=======
+            $page[0] = 'manager/edittask';
+            $this->RederAsPanel($page);
+        }
+    }
+    private function deletetask($JOB_NO){
+        $this->loadModel('task');
+        $result = $this->deletetask($JOB_NO);
+        if($result = 00000){
+            return true;
+        }else{
+            return false;
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa
         }
     }
     function createtask(){
@@ -152,7 +169,11 @@ class manager extends Controller {
         }
         $this->view->JSInject[1] = URL_Public.'/js/createtask.js';
         
+<<<<<<< HEAD
         $page[0] = 'manager/task/createtask';
+=======
+        $page[0] = 'manager/createtask';
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa
         $this->RederAsPanel($page);
     }
     function tasklog(){
@@ -182,14 +203,19 @@ class manager extends Controller {
         $this->view->ansTask = $this->task->ansTaskLog($this->view->taskStatus);
         $this->view->JSInject[1] = URL_Public.'/js/tasklog.js';
         
+<<<<<<< HEAD
         
         $page[0] = 'manager/task/tasklog';
+=======
+        $page[0] = 'manager/tasklog';
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa
         $this->RederAsPanel($page);
     }
     
     // Supplier Management.
     
     function supplier(){
+<<<<<<< HEAD
         $this->loadModel('supplier');
         if(isset($_POST['DEL_SUP'])){
             $result = $this->supplier->deleteSup($_POST['SUP_ABNAME']);
@@ -226,6 +252,10 @@ class manager extends Controller {
         
         $this->view->JSInject[1] = URL_Public.'/js/addsup.js';
         $page[0] = 'manager/supplier/addsup';
+=======
+        $page[0] = 'manager/supplier';
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa
         $this->RederAsPanel($page);
     }
+    
 }

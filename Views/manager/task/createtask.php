@@ -1,6 +1,9 @@
+<<<<<<< HEAD:Views/manager/task/createtask.php
 <header class="text-center" style="margin-bottom:2rem;">
     <h1>JOB Management.</h1>
 </header>
+=======
+>>>>>>> 4d39d6b109d4cf45ecabf21a5eeaf2c2e49f5caa:Views/manager/createtask.php
 <div>
     <form id="createTaskForm" name="createTaskForm" class="form-horizontal" method="post">
         <div class="form-group">
