@@ -5,7 +5,7 @@
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
       <div class="menu-list">
         <ul id="menu-content" class="menu-content collapse out">
-            <a href="#"><li class="primary_nav">
+            <a href="<?=URL_Path.'/manager'?>"><li class="primary_nav">
               <i class="fa fa-home fa-lg"></i> HOME
             </li></a>
 

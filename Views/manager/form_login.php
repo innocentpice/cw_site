@@ -23,7 +23,7 @@
         </div>
         <div class="form-group"> 
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="btn btn-default btn-lg" name="auth" value="true">LOGIN</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" name="auth" value="true">LOGIN</button>
             </div>
          </div>
     </form>

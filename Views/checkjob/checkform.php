@@ -18,8 +18,7 @@
         </div>
         <div class="form-group"> 
             <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" class="col-xs-5 btn btn-default btn-lg" name="auth" value="true">Search</button>
-                <a href="<?=URL_Path?>" class="col-xs-offset-2 col-xs-5 btn btn-default btn-lg">CANCEL</a>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" name="auth" value="true">Search</button>
             </div>
          </div>
     </form>
