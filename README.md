@@ -1,12 +1,12 @@
 :: 10/02/2560 ::
 
--- TODO --
-> Order No. Genarator.
-> Monitor Data.
-> Suppiler Assessment
-> TASK -> Admin Subscribe
-> Customer Data
-> Order Contact info
+> -- TODO --
+- Order No. Genarator.
+- Monitor Data.
+- Suppiler Assessment
+- TASK -> Admin Subscribe
+- Customer Data
+- Order Contact info
 
 
 :: 09/02/2560 ::
