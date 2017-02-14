@@ -33,7 +33,7 @@
             </li></a>
             
             <li  data-toggle="collapse" data-target="#nav_auth" class="collapsed primary_nav">
-              <a href="#"><i class="fa fa-gear fa-lg"></i> AUTH<span class="arrow"></span></a>
+              <a href="#"><i class="fa fa-gear fa-lg"></i> AUTH [<?=$_SESSION['username']?>][<?=$_SESSION['permiss']?>]<span class="arrow"></span></a>
             </li>
             <ul class="sub-menu collapse" id="nav_auth">
                 <a href="<?=URL_Path.'/manager/logout'?>"><li><i class="fa fa-sign-out fa-md "></i>LOGOUT</li></a>

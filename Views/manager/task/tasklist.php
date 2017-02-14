@@ -9,14 +9,17 @@
     $thead_status[1] = 'STATUS => Processing';
     $thead_status[2] = 'STATUS => Shipping';
     for($j=0;$j<=2;$j++){
-    
-    echo '<thead class="bg-info"><tr>';
+    echo '<thead class="bg-info">';
+    echo '<tr><th class="bg-primary text-center" colspan="12">' 
+    . $thead_status[$j] 
+    . '</th></tr>';
+    echo '<tr>';
     for($i=0;$i<7;$i++){
         echo '<th>' . $thead_title["$i"] . '</th>';
     }
-    echo '<th colspan="3">' . $thead_status[$j] . '</th>';
+    echo '<th>SUPPILER</th><th>STAFF</th>';
+    echo '<th colspan="3">CUSTOM</th>';
     echo '</tr></thead>';
-    
     echo '<tbody>';
     foreach($this->list_data[$j] as $data){
         echo '<tr>';
@@ -40,6 +43,12 @@
               echo $data[$i] . '</td>';
             }
         }
+        echo '<td class="text-center">';
+        echo $data['SUP_NAME']== '' ? '-' :$data['SUP_NAME'];
+        echo '</td>';
+        echo '<td class="text-center">';
+        echo $data['STAFF_NAME']=='' ? '-' :$data['STAFF_NAME'];
+        echo '</td>';
         echo '<td class="text-center">'.
             '<a href="'.URL_Path.'/manager/tasklog?JOB_NO='.$data[1].'" class="btn btn-info btn-md">'.
             '<i class="glyphicon glyphicon-zoom-in"></i></a></td>';
@@ -47,7 +56,7 @@
             '<a href="'.URL_Path.'/manager/taskedit?JOB_NO='.$data[1].'" class="btn btn-warning btn-md">'.
             '<i class="glyphicon glyphicon-cog"></i></a></td>';
         echo '<td class="text-center">'.
-            '<button class="btn btn-sm btn-danger" type="button" onClick="DELETETASK_POPUP(\''.$data[1].'\');" class="btn btn-info btn-md" data-toggle="modal" data-target="#DELETETASK">'.
+            '<button class="btn btn-md btn-danger" type="button" onClick="DELETETASK_POPUP(\''.$data[1].'\');" class="btn btn-info btn-md" data-toggle="modal" data-target="#DELETETASK">'.
             '<i class="glyphicon glyphicon-trash"></i></button></td>';
         echo '</tr>';
     }

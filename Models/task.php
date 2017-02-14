@@ -8,7 +8,10 @@ class task extends Model {
         $NO = array();
         if(isset($STATUS)){ 
             $NO = array(':STATUS' => $STATUS);
-            $sql = "SELECT * FROM TASK WHERE STATUS = :STATUS ORDER BY NO DESC";
+            $sql = "SELECT TASK.*,".
+            " (SELECT STAFF.USERNAME FROM STAFF WHERE STAFF.NO = TASK.STAFF_NO) AS STAFF_NAME,".
+            " (SELECT SUP_ABNAME FROM SUPPLIER WHERE SUPPLIER.NO = TASK.SUP_NO) AS SUP_NAME".
+            " FROM TASK WHERE STATUS = :STATUS ORDER BY NO DESC";
         }else{
             $sql = 'SELECT * FROM TASK ORDER BY NO DESC';
         }
