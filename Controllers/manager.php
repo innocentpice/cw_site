@@ -117,8 +117,9 @@ class manager extends Controller {
             $query['QTY'] = $_POST['JOB_QTY'];
             $query['TYPE'] = $_POST['JOB_TYPE'];
             $query['DLT'] = $_POST['JOB_DEAD'];
-            $query['STATUS'] = 1;
             $query['JOB_NO'] = $_POST['JOB_NO'];
+            $query['SUP_NO'] = $_POST['SUP_NO'];
+            $query['STAFF_NO'] = $_POST['STAFF_NO'];
             $edit = $this->task->taskedit($query);
             if($edit == 00000){
                 $this->view->msgEdit = true;

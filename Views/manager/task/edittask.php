@@ -35,6 +35,18 @@
                 <input type="text" class="form-control" id="JOB_TYPE" name="JOB_TYPE" placeholder="PC , SET , EA" value="<?=$this->JobData['TYPE']?>">
             </div>
         </div>
+        <hr class="hr">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="SUP_NO">SUPPLIER No.</label>
+            <div class="col-sm-5">
+                <input type="number" class="form-control" id="SUP_NO" name="SUP_NO" placeholder="SUPPLIER NO." value="<?=$this->JobData['SUP_NO']?>">
+            </div>
+            <label class="control-label col-sm-2" for="STAFF_NO">STAFF No.</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="STAFF_NO" name="STAFF_NO" placeholder="STAFF NO." value="<?=$this->JobData['STAFF_NO']?>">
+            </div>
+        </div>
+        <hr class="hr">
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" name="EDITTASK" value="true" class="btn btn-default btn-lg">SAVE</button>

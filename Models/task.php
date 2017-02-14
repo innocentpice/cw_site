@@ -76,15 +76,18 @@ class task extends Model {
             "QUANTITY = :QTY, ".
             "TYPE = :TYPE, ".
             "DEADLINE_TIME = :DLT, ".
-            "STATUS = :STATUS WHERE JOB_NO = :JOB_NO";
+            "SUP_NO = :SUP_NO, ".
+            "STAFF_NO = :STAFF_NO ".
+            "WHERE JOB_NO = :JOB_NO";
             $NO = array(
                 ':C_NAME' => $query['C_NAME'],
                 ':DES' => $query['DES'],
                 ':QTY' => $query['QTY'],
                 ':TYPE' => $query['TYPE'],
                 ':DLT' => $query['DLT'],
-                ':STATUS' => $query['STATUS'],
-                ':JOB_NO' => $query['JOB_NO']
+                ':JOB_NO' => $query['JOB_NO'],
+                ':SUP_NO' => $query['SUP_NO'],
+                ':STAFF_NO' => $query['STAFF_NO']
             );
         }
         $sth = $this->db->prepare($sql);
