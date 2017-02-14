@@ -39,17 +39,11 @@
                         <a href="<?=URL_Path?>"><b>CWGreat</b><small>&nbsp;Co.,Ltd.</small></a>
                     </div>
                     <div class="left menu hidden-xs">
-                        <a class="item">
-                            Product
-                        </a>
                         <a class="item" href="<?=URL_Path?>/checkjob">
                             <i class="checkmark box icon"></i>
                             Check Status
                         </a>
-                        <a class="item">
-                            Jobs
-                        </a>
-                        <a class="item">
+                        <a class="item" href="<?=URL_Path.'/contact'?>">
                             <i class="marker icon"></i>
                             Contacts
                         </a>
@@ -63,17 +57,11 @@
             </div>
             
             <div id="menu-sidebar" class="ui right sidebar inverted vertical menu">
-                <a class="item">
-                    Product
-                </a>
                 <a class="item" href="<?=URL_Path?>/checkjob">
                     <i class="checkmark box icon"></i>
                     Check Status
                 </a>
-                <a class="item">
-                    Jobs
-                </a>
-                <a class="item">
+                <a class="item" href="<?=URL_Path.'/contact'?>">
                     <i class="marker icon"></i>
                     Contacts
                 </a>

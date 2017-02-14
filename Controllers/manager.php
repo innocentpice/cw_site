@@ -39,10 +39,10 @@ class manager extends Controller {
     // Auth
     
     private function auth(){
-        if(empty($_SESSION['username'])){
+        if(empty($_SESSION['username']) || $_SESSION['permiss'] != 5){
             if($_POST['auth']){
                 $this->loadModel('auth');
-                $result = $this->auth->login($_POST['username'],$_POST['password']);
+                $result = $this->auth->login($_POST['username'],$_POST['password'],5);
                 if($result){
                     $_SESSION['username'] = $result[0]['USERNAME'];
                     $_SESSION['permiss'] = $result[0]['PERMISSION'];
