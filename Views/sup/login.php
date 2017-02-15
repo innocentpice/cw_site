@@ -1,5 +1,5 @@
 <div class="col-xs-8 col-xs-offset-2" style="margin-top:20%;">
-    <header><h1 class="text-center">Management System</h1></header><hr/>
+    <header><h1 class="text-center">SUPPLIER SYSTEM.</h1></header><hr/>
     <form class="form-horizontal" method="POST">
         <?php if(isset($this->msgLogin)){?>
             <div class="form-group">

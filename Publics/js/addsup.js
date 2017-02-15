@@ -27,5 +27,30 @@ $(document).ready(function(){
             return false; 
         }
     });
-    
+    $('#frm_username>input').change(function(e){
+        var username = $(e.currentTarget).val();
+        var url = window.URL_Path+"/api/sup_username/"+username;
+        $.ajax({
+            type: 'GET',
+            url: url,
+            dataType: 'json'
+        }).done((res)=>{
+            if(res){
+                $('#frm_username').removeClass('has-error has-feedback');
+                $('#frm_username').addClass('has-success has-feedback');
+                $('#frm_username>span').html(
+                    'สามารถใช้ Username นี้ได้ '+
+                    '<span class="glyphicon glyphicon-ok"><span>'
+                );
+            }else{
+                $('#frm_username').removeClass('has-success has-feedback');
+                $('#frm_username').addClass('has-error has-feedback');
+                $('#frm_username>span').html(
+                    'Username ซ้ำ! ไม่สามารถใช้ได้ '+
+                    '<span class="glyphicon glyphicon-remove"><span>'
+                );
+            }
+        });
+        e.preventDefault();
+    });
 });

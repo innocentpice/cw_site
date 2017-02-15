@@ -20,15 +20,19 @@ class supplier extends Model {
         $SUP_ADDRESS = $query['SUP_ADDRESS'];
         $SUP_TEL = $query['SUP_TEL'];
         $SUP_EMAIL = $query['SUP_EMAIL'];
+        $USERNAME = $query['USERNAME'];
+        $PASSWORD = $query['PASSWORD'];
         
-        $sql = "INSERT INTO SUPPLIER (SUP_ABNAME, SUP_NAME, SUP_ADDRESS, SUP_TEL, SUP_EMAIL)".
-        " VALUES (:SUP_ABNAME, :SUP_NAME, :SUP_ADDRESS, :SUP_TEL, :SUP_EMAIL)";
+        $sql = "INSERT INTO SUPPLIER (SUP_ABNAME, SUP_NAME, SUP_ADDRESS, SUP_TEL, SUP_EMAIL, USERNAME, PASSWORD)".
+        " VALUES (:SUP_ABNAME, :SUP_NAME, :SUP_ADDRESS, :SUP_TEL, :SUP_EMAIL, :USERNAME, :PASSWORD)";
         $NO = array(
             ':SUP_ABNAME' => $SUP_ABNAME,
             ':SUP_NAME' => $SUP_NAME,
             ':SUP_ADDRESS' => $SUP_ADDRESS,
             ':SUP_TEL' => $SUP_TEL,
-            ':SUP_EMAIL' => $SUP_EMAIL
+            ':SUP_EMAIL' => $SUP_EMAIL,
+            ':USERNAME' => $USERNAME,
+            ':PASSWORD' => $PASSWORD
         );
         $sth = $this->db->prepare($sql);
         $sth->execute($NO);

@@ -30,6 +30,19 @@
             <input type="text" name="SUP_TEL" class="form-control" placeholder="Tel." value="<?=$this->DataCreate['SUP_TEL']?>">
             <input type="hidden" name="ADDSUP" value="true" class="hidden">
         </div>
+        <div id="frm_username" class="form-group col-xs-12">
+            <label for="USERNAME">USERNAME:</label>
+            <span></span>
+            <input type="text" name="USERNAME" class="form-control" placeholder="username" value="<?=$this->DataCreate['USERNAME']?>">
+        </div>
+        <div class="form-group col-xs-12 col-md-6">
+            <label for="PASSWORD">PASSWORD:</label>
+            <input type="password" name="PASSWORD" class="form-control" placeholder="password">
+        </div>
+        <div class="form-group col-xs-12 col-md-6">
+            <label for="REPASSWORD">RE-PASSWORD:</label>
+            <input type="password" name="REPASSWORD" class="form-control" placeholder="re-password">
+        </div>
         <div class="form-group col-xs-12 col-md-12" style="margin-top:3rem;">
             <button type="submit" value="ADDSUP" class="btn btn-lg btn-primary btn-block">
                 <i class="fa fa-plus-square fa-md"></i>

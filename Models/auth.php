@@ -26,4 +26,19 @@ class auth extends Model {
     function logout(){
         session_unset();
     }
+    function sup_login($user,$pass){
+        $sql = "SELECT NO, USERNAME, PASSWORD FROM SUPPLIER WHERE USERNAME = :user AND PASSWORD = :pass";
+        $login = array(
+            ':user' => $user,
+            ':pass' => $pass
+        );
+        $sth = $this->db->prepare($sql);
+        $sth->execute($login);
+        $result = $sth->fetchAll();
+        if(isset($result[0])){
+            return $result;
+        }else{
+            return false;
+        }
+    }
 }

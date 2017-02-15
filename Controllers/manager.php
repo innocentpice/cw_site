@@ -224,6 +224,8 @@ class manager extends Controller {
             $query['SUP_ADDRESS'] = $_POST['SUP_ADDRESS'];
             $query['SUP_TEL'] = $_POST['SUP_TEL'];
             $query['SUP_EMAIL'] = $_POST['SUP_EMAIL'];
+            $query['USERNAME'] = $_POST['USERNAME'];
+            $query['PASSWORD'] = $_POST['PASSWORD'];
             
             $this->loadModel('supplier');
             $result = $this->supplier->addsup($query);
