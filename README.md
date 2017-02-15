@@ -1,3 +1,20 @@
+:: 15/02/2560 ::
+
+> -- TODO --
+- Monitor Data.
+- Customer Data
+- Order No. Genarator.
+- Order Contact info
+
+> -- PROCESS --
+- Suppiler Assessment --
+-: SUP PANAL ADDED
+
+> -- SUCCESS --
+- TASK -> Admin Subscribe
+
+
+
 :: 10/02/2560 ::
 
 > -- TODO --
