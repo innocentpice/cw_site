@@ -32,7 +32,7 @@ class task extends Model {
         return $result;
     }
     function addtask($query){
-        $sql = "INSERT INTO TASK".
+        $sql = "INSERT INTO TASK (NO, JOB_NO, C_NAME, DESCRIPTION, QUANTITY, TYPE, START_TIME, DEADLINE_TIME, STATUS)".
             " VALUES ( NULL, :JOB_NO, :C_NAME, :DESCTIP, :QTY, :TYPE, CURRENT_DATE(), :DEADLINE, 1)";
         $NO = array(
             ':JOB_NO' => $query[0],

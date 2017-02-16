@@ -159,11 +159,12 @@ class manager extends Controller {
                 $this->view->msgCreate = 'Error';
             }
         }
-        $this->view->JSInject[1] = URL_Public.'/js/createtask.js';
         
+        $this->view->JSInject[1] = URL_Public.'/js/createtask.js';
         $page[0] = 'manager/task/createtask';
         $this->RederAsPanel($page);
     }
+    
     function tasklog(){
         if(!isset($_GET['JOB_NO'])){
             $this->ShowError();
