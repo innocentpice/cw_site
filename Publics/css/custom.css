@@ -1,23 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Kanit|Roboto&subset=latin-ext,thai,vietnamese');
-
 * {
     font-family: 'Kanit', 'Roboto', sans-serif;
 }
-.bar>.progress {
-    background-color: inherit !important;
-    background-image: none !important;
-}
+
 .header-img {
     background-image: url('http://i-source.com/wp-content/uploads/2014/02/CNC-Laser-Fabrication-I-Source-Technical-Services-Inc.jpg');
+    background-size: cover;
     background-position: center;
-    margin-top: -1rem !important;
-    margin-bottom: 0px;
-    margin-bottom: 2rem;
 }
+
 .header-img .texture {
     background-image: url('http://oi43.tinypic.com/33opjtd.jpg');
-    background-size: contain;
+    background-size: 400px;
     background-repeat: repeat;
-    min-height: 300px;
-    padding-top: 4rem;
 }

@@ -8,7 +8,8 @@ class checkjob extends Controller {
         $this->loadModel('task');
         
         $this->view->JSInject[0] = URL_Public . '/js/checkjob.js';
-        $this->view->CSSInject[0] = URL_Public . '/css/checkjob.css';
+        $this->view->CSSInject[0] = URL_Public . '/css/main.css';
+        $this->view->CSSInject[1] = URL_Public . '/css/checkjob.css';
         
         if(isset($_POST['JobNo'])){
             $task = $this->task->checkjob($_POST['JobNo']);

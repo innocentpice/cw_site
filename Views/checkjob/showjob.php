@@ -17,8 +17,10 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
       กำหนดการส่งมอบชิ้นงาน
     </h2>
     <div class="steps-timeline">
-      <div class="steps-one">
-        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+      <div class="steps-one complete">
+        <div class="steps-img text-center">
+          <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+        </div>
         <h3 class="steps-name">
           Order Received
         </h3>
@@ -28,8 +30,10 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
         </p>
       </div>
 
-      <div class="steps-two">
-        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+      <div class="steps-two <?php if($this->task[8] == 2){echo 'process';}else if($this->task[8] > 2){echo 'complete';}?>">
+        <div class="steps-img text-center">
+          <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+        </div>
         <h3 class="steps-name">
           Processing
         </h3>
@@ -39,8 +43,10 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
         </p>
       </div>
 
-      <div class="steps-three">
-        <img class="steps-img" src="http://placehold.it/50/3498DB/FFFFFF" alt="" />
+      <div class="steps-three <?php if($this->task[8] == 3){echo 'process';}else if($this->task[8] > 3){echo 'complete';}?>">
+        <div class="steps-img text-center">
+          <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+        </div>
         <h3 class="steps-name">
           Delivery
         </h3>
@@ -52,3 +58,49 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     </div>
   </section>
 </div>
+
+<div class="container-fluid">
+  <div class="col-md-6 col-sm-12" style="padding-bottom:3rem;">
+    <header class="clearfix text-center" style="padding-bottom:3rem;">
+      <h3>รายละเอียดชิ้นงาน</h3>
+    </header>
+    <div class="col-sm-8 col-sm-offset-2 clearfix">
+      <p>
+        หมายเลขคำสั่งซื้อ: 
+        <strong><?=$this->task[1]?></strong>
+      </p>
+      <p>
+        ผู้สั่งซื้อ:  
+        <strong><?=$this->task[2]?></strong>
+      </p>
+      <p>
+        รายละเอียดงาน: 
+        <textarea readonly="" class="col-xs-12" rows="10"><?=$this->task[3]?></textarea>
+      </p>
+    </div>
+  </div>
+  <div class="col-md-6 col-sm-12" style="padding-bottom:3rem;">
+    <header class="clearfix text-center" style="padding-bottom:3rem;">
+      <h3>สถานะสินค้าบัจจุบัน</h3>
+    </header>
+    <div class="col-sm-8 col-sm-offset-2 clearfix">
+    <?php foreach ($this->taskLog as $taskLog) { ?>
+      <p>
+        <?=substr($taskLog['DATE'],0,-3)?>: <br>
+        <strong>
+          <?=$taskLog['DESCRIPTION']?>
+        </strong>
+      </p>
+    <?php }?>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="container-fluid text-center">
+  <a href="#checkjob" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  <p>Copyright © 2016 - 2017 CWGREAT Co.,Ltd All rights reserved.</p>
+</footer>

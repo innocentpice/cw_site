@@ -1,6 +1,8 @@
 .jumbotron {
-    background-color: #f39c12;
+    background-color: transparent;
     color: #fff;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
 }
 
 html {
@@ -20,7 +22,7 @@ body {
 .section-header,
 .steps-header,
 .steps-name {
-    color: #3498DB;
+    color: #c0392b;
     font-weight: 400;
     font-size: 1.4em;
 }
@@ -36,14 +38,14 @@ body {
 
 @media screen and (max-width: 500px) {
     .steps-timeline {
-        border-left: 2px solid #3498DB;
+        border-left: 2px solid #2ecc71;
         margin-left: 25px;
     }
 }
 
 @media screen and (min-width: 500px) {
     .steps-timeline {
-        border-top: 2px solid #3498DB;
+        border-top: 2px solid #2ecc71;
         padding-top: 20px;
         margin-top: 40px;
         margin-left: 16.65%;
@@ -113,7 +115,34 @@ body {
     margin: auto;
     width: 50px;
     height: 50px;
+    border: 4px solid #2ecc71;
     border-radius: 50%;
+    background-color: #fff;
+}
+
+.process .steps-img {
+    border: 4px solid red;
+    border-top: 4px solid #f1c40f;
+    animation: spin 2s linear infinite;
+}
+
+.steps-img i {
+    margin-top: 8px;
+    color: #2c3e50;
+    display: none;
+}
+
+.complete .steps-img i {
+    display: block;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (max-width: 500px) {
