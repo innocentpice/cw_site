@@ -172,3 +172,9 @@ body {
         text-align: center;
     }
 }
+
+@media screen and (min-width: 992px) {
+    .t_line {
+        border-left: 2px solid #2ecc71;
+    }
+}

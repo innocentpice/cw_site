@@ -79,19 +79,22 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
       </p>
     </div>
   </div>
-  <div class="col-md-6 col-sm-12" style="padding-bottom:3rem;">
+  <div class="col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;">
     <header class="clearfix text-center" style="padding-bottom:3rem;">
       <h3>สถานะสินค้าบัจจุบัน</h3>
     </header>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
+    <ul style="list-style: none;">
     <?php foreach ($this->taskLog as $taskLog) { ?>
-      <p>
+      <li>
+        <i class="fa fa-clock-o"></i>
         <?=substr($taskLog['DATE'],0,-3)?>: <br>
         <strong>
-          <?=$taskLog['DESCRIPTION']?>
+          |- <?=$taskLog['DESCRIPTION']?>
         </strong>
-      </p>
+      </li>
     <?php }?>
+    </ul>
     </div>
   </div>
 </div>
