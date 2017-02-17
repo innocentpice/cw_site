@@ -17,11 +17,15 @@
                             $S2 = 'disabled';
                         }else if($this->taskStatus == 3){
                             $S3 = 'disabled';
+                        }else if($this->taskStatus == 4){
+                            $S4 = 'disabled';
                         }
+                        
                     ?>
                     <a href="<?=URL_Path.'/manager/tasklog/?JOB_NO='.$this->taskID?>&CHANGESTATUS=1" class="btn btn-sm btn-default <?=$S1?>">O</a>
                     <a href="<?=URL_Path.'/manager/tasklog/?JOB_NO='.$this->taskID?>&CHANGESTATUS=2" class="btn btn-sm btn-default <?=$S2?>">P</a>
                     <a href="<?=URL_Path.'/manager/tasklog/?JOB_NO='.$this->taskID?>&CHANGESTATUS=3" class="btn btn-sm btn-default <?=$S3?>">S</a>
+                    <a href="<?=URL_Path.'/manager/tasklog/?JOB_NO='.$this->taskID?>&CHANGESTATUS=4" class="btn btn-sm btn-default <?=$S4?>">DONE</a>
                 </div>
                 <div class="col-xs-5 col-md-2 inline text-right">
                     <button role="button" data-toggle="collapse" href="#ADDTASKLOG" aria-expanded="false" aria-controls="ADDTASKLOG" 
@@ -106,6 +110,27 @@
                 </thead>
                 <tbody id="LogThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                     <?php foreach($this->taskLog[2] as $taskLog){ ?>
+                    <tr>
+                        <th scope="row"><?=substr($taskLog['DATE'],0,-3)?></th>
+                        <td colspan="2"><?=$taskLog['DESCRIPTION']?></td>
+                        <td class="text-right"><a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th># DATE_TIME</th>
+                        <th>DESCRIPTION</th>
+                        <th>STATUS => DONE</th>
+                        <th class="text-right">
+                            <a role="button" data-toggle="collapse" data-parent="#LogThree" href="#LogThree" aria-expanded="true" aria-controls="LogThree">
+                              <i class="glyphicon glyphicon-menu-hamburger"></i>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="LogThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                    <?php foreach($this->taskLog[3] as $taskLog){ ?>
                     <tr>
                         <th scope="row"><?=substr($taskLog['DATE'],0,-3)?></th>
                         <td colspan="2"><?=$taskLog['DESCRIPTION']?></td>

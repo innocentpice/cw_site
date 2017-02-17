@@ -63,6 +63,9 @@ class task extends Model {
     }
     function taskedit($query,$status){
         if(isset($status)){
+            if($status == 4){
+                $this->addtasklog($query,'จัดส่งสินค้าเรียบร้อยแล้ว ขอบคุณที่ใช่บริการค่ะ',4);
+            }
             $sql = "UPDATE TASK SET ".
             "STATUS = :STATUS WHERE JOB_NO = :JOB_NO";
             $NO = array(
@@ -95,6 +98,7 @@ class task extends Model {
         $result = $sth->errorCode();
         return $result;
     }
+    
     function ansTaskLog($STATUS = NULL){
         $NO = array();
         $sql = "SELECT  `DESCRIPTION` , COUNT( * ) AS  `NO` FROM TASK_LOG ";

@@ -66,12 +66,12 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     </header>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
       <p>
-        หมายเลขคำสั่งซื้อ: 
-        <strong><?=$this->task[1]?></strong>
+        หมายเลขคำสั่งซื้อ:
+        <strong> <?=$this->task[1]?></strong>
       </p>
       <p>
-        ผู้สั่งซื้อ:  
-        <strong><?=$this->task[2]?></strong>
+        ผู้สั่งซื้อ:
+        <strong> <?=$this->task[2]?></strong>
       </p>
       <p>
         รายละเอียดงาน: 

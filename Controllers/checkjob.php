@@ -20,7 +20,13 @@ class checkjob extends Controller {
             $taskLog = $this->task->showtasklog($task[0]['JOB_NO']);
             $this->showjob($task[0],$taskLog);
         }else{
-            echo 'NOT FOUND.';
+        ?>
+            <div class="container" style="margin-top:5rem;">
+                <header>
+                    <h1 class=text-center>ไม่พบหมายเลขที่ท่านค้นหา</h1>
+                </header>
+            </div>
+        <?php
         }
         $this->view->render('footer');
     }

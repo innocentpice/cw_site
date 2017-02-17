@@ -37,13 +37,28 @@
         </div>
         <hr class="hr">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="SUP_NO">SUPPLIER No.</label>
+            <label class="control-label col-sm-2" for="SUP_NO">SUPPLIER :</label>
             <div class="col-sm-5">
-                <input type="number" class="form-control" id="SUP_NO" name="SUP_NO" placeholder="SUPPLIER NO." value="<?=$this->JobData['SUP_NO']?>">
+                <select class="form-control" id="SUP_NO" name="SUP_NO">
+                    <option value="NULL">-</option>
+                    <?php foreach($this->SELECT_SUP as $SELECT_SUP){?>
+                    <option value="<?=$SELECT_SUP['NO']?>" <?php if($this->JobData['SUP_NO']==$SELECT_SUP['NO']){echo 'selected="selected"';}?>>
+                        <?=$SELECT_SUP['SUP_ABNAME']?>
+                    </option>
+                    <?php }?>
+                </select>
             </div>
-            <label class="control-label col-sm-2" for="STAFF_NO">STAFF No.</label>
+            <label class="control-label col-sm-2" for="STAFF_NO">STAFF :</label>
             <div class="col-sm-3">
-                <input type="text" class="form-control" id="STAFF_NO" name="STAFF_NO" placeholder="STAFF NO." value="<?=$this->JobData['STAFF_NO']?>">
+                <!--<input type="text" class="form-control" id="STAFF_NO" name="STAFF_NO" placeholder="STAFF NO." value="<?=$this->JobData['STAFF_NO']?>">-->
+                <select class="form-control" id="STAFF_NO" name="STAFF_NO">
+                    <option value="NULL">-</option>
+                    <?php foreach($this->SELECT_STAFF as $SELECT_STAFF){?>
+                    <option value="<?=$SELECT_STAFF['NO']?>" <?php if($this->JobData['STAFF_NO']==$SELECT_STAFF['NO']){echo 'selected="selected"';}?>>
+                        <?=$SELECT_STAFF['USERNAME']?>
+                    </option>
+                    <?php }?>
+                </select>
             </div>
         </div>
         <hr class="hr">

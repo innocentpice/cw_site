@@ -15,6 +15,7 @@
             <ul class="sub-menu collapse" id="nav_task">
                 <a href="<?=URL_Path.'/manager/tasklist'?>"><li><i class="fa fa-list-ul fa-md"></i>VIEW</li></a>
                 <a href="<?=URL_Path.'/manager/createtask'?>"><li><i class="fa fa-plus-square fa-md"></i>CREATE</li></a>
+                <a href="<?=URL_Path.'/manager/jobdone'?>"><li><i class="fa fa-check fa-md"></i>DONE</li></a>
             </ul>
             
             <li data-toggle="collapse" data-target="#nav_supplier" class="collapsed primary_nav">

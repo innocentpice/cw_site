@@ -4,11 +4,19 @@ class supplier extends Model {
     function __construct(){
         parent::__construct();
     }
-    function viewsup($NO=NULL){
+    function viewsup($NO=NULL,$GETNO_ABNAME){
         if(isset($NO)){
-            $sql = "SELECT * FROM SUPPLIER WHERE NO = '".$NO."'";
+            if($GETNO_ABNAME != true){
+                $sql = "SELECT * FROM SUPPLIER WHERE NO = '".$NO."'";
+            }else{
+                $sql = "SELECT NO, SUP_ABNAME FROM SUPPLIER WHERE NO = '".$NO."'";
+            }
         }else{
-            $sql = "SELECT * FROM SUPPLIER ORDER BY NO DESC";
+            if($GETNO_ABNAME != true){
+                $sql = "SELECT * FROM SUPPLIER ORDER BY NO DESC";
+            }else{
+                $sql = "SELECT NO, SUP_ABNAME FROM SUPPLIER ORDER BY SUP_ABNAME";
+            }
         }
         $sth = $this->db->query($sql);
         $result = $sth->fetchAll();

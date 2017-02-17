@@ -72,7 +72,10 @@ class manager extends Controller {
     }
     // ERROR 
     
-    function ShowError(){
+    private function ShowError($msg){
+        if(isset($msg)){
+            $this->view->ErrorMsg = $msg;
+        }
         $page[0] = 'manager/error';
         $this->RederAsPanel($page);
     }
@@ -100,6 +103,26 @@ class manager extends Controller {
         $page[0] = 'manager/task/tasklist';
         $this->RederAsPanel($page);
     }
+    
+    function jobdone(){
+        $this->loadModel('task');
+        
+        if(isset($_POST['DELETETASK'])){
+            $result = $this->task->deletetask($_POST['JOB_NO']);
+            if($result == 00000){
+                $this->view->msgDelete = true;
+            }else{
+                $this->view->msgDelete = false;
+            }
+        }
+        
+        $this->view->list_data[0] = $this->task->task_list(4);
+        $this->view->JSInject[1] = URL_Public.'/js/tasklist.js';
+        
+        $page[0] = 'manager/task/jobdone';
+        $this->RederAsPanel($page);
+    }
+    
     function taskedit(){
         if(!isset($_GET['JOB_NO'])){
             $this->ShowError();
@@ -109,6 +132,8 @@ class manager extends Controller {
         }
         
         $this->loadModel('task');
+        $this->loadModel('supplier');
+        $this->loadModel('staff');
         $this->view->JSInject[1] = URL_Public.'/js/edittask.js';
         
         if(isset($_POST['EDITTASK'])){
@@ -131,15 +156,18 @@ class manager extends Controller {
         
         $JobData = $this->task->checkjob($JOB_NO);
         if(empty($JobData[0][0])){
-            $this->ShowError();
+            $this->ShowError('ไม่มีหมายเลขที่ท่านค้นหา');
             return false;
         }else{
+            $this->view->SELECT_SUP = $this->supplier->viewsup(NULL,1);
+            $this->view->SELECT_STAFF = $this->staff->viewstaff(NULL,1);
             $this->view->JobData = $JobData[0];
             
             $page[0] = 'manager/task/edittask';
             $this->RederAsPanel($page);
         }
     }
+    
     function createtask(){
         if(isset($_POST['CREATE'])){
             $this->loadModel('task');
@@ -191,6 +219,7 @@ class manager extends Controller {
         $this->view->taskLog[0] = $this->task->showtasklog($JOB_NO,1);
         $this->view->taskLog[1] = $this->task->showtasklog($JOB_NO,2);
         $this->view->taskLog[2] = $this->task->showtasklog($JOB_NO,3);
+        $this->view->taskLog[3] = $this->task->showtasklog($JOB_NO,4);
         $this->view->taskStatus = $taskStatus[0]['STATUS'];$taskStatus = null;
         $this->view->taskID = $JOB_NO;
         $this->view->ansTask = $this->task->ansTaskLog($this->view->taskStatus);
