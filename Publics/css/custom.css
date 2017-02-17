@@ -4,13 +4,13 @@
 }
 
 .header-img {
-    background-image: url('http://i-source.com/wp-content/uploads/2014/02/CNC-Laser-Fabrication-I-Source-Technical-Services-Inc.jpg');
+    background-image: url('../img/header_bg.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .header-img .texture {
-    background-image: url('http://oi43.tinypic.com/33opjtd.jpg');
+    background-image: url('../img/texture.jpg');
     background-size: 400px;
     background-repeat: repeat;
 }

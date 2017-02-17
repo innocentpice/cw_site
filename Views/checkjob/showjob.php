@@ -79,7 +79,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
       </p>
     </div>
   </div>
-  <div class="col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;">
+  <div class="col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;min-height:50rem;">
     <header class="clearfix text-center" style="padding-bottom:3rem;">
       <h3>สถานะสินค้าบัจจุบัน</h3>
     </header>
