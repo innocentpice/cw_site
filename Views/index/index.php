@@ -63,6 +63,11 @@
       <p>งานจัดหาอุปกรณ์หรือชิ้นงานตามสั่ง</p>
     </div>
   </div>
+  <div class="row">
+    <h3><strong>ชมตัวอย่างสินค้า</strong></h3>
+    <p><span class="glyphicon glyphicon-chevron-down shake-down" style="color:red;"></span></p>
+    <a href="#" class="btn btn-lg btn-primary">Click ! ชมตัวอย่างสินค้าของเรา</a>
+  </div>
 </div>
 
 <div id="about" class="container-fluid bg-grey">
@@ -112,7 +117,7 @@
     </div>
   </div><br>
   
-  <h2>คำพูดจากลูกค้า</h2>
+  <h2>นโยบายผู้บริหาร</h2>
   <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">

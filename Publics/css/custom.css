@@ -14,3 +14,19 @@
     background-size: 400px;
     background-repeat: repeat;
 }
+
+.shake-down {
+    animation: shake-down 1s infinite;
+}
+
+@keyframes shake-down {
+    0% {
+        top: 0px;
+    }
+    50% {
+        top: 3px;
+    }
+    100% {
+        top: 0px;
+    }
+}
