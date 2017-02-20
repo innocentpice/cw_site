@@ -86,22 +86,21 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
     <ul style="list-style: none;padding:0px;margin:0px;">
     <?php foreach ($this->taskLog as $taskLog) { ?>
-      <li class="thumbnail" style="padding:1rem;border-radius:1rem;">
+      <li class="thumbnail" style="padding:1rem;padding-top:2rem;border-radius:1rem;">
           <?php
             $time = strtotime($taskLog['DATE']);
             $d = ceil((time() - $time)/60/60/24);
             if($d>0){
-              $UPDATE = '<span class="label label-update">UPDATE</span>';
+              $UPDATE = '<span class="label label-update" style="padding:0.2rem 0.5rem;">UPDATE</span>';
             }else{
               $UPDATE = null;
             }
           ?>
           <p>
-            <span class="label label-success"><i class="fa fa-clock-o"></i>&nbsp;<?=date('F d, Y ( h:i )',$time)?></span>
-            <?=$UPDATE?>
+            <span class="label label-success" style="padding:0.6rem;"><i class="fa fa-clock-o"></i>&nbsp;<?=date('F d, Y ( h:i )',$time)?> <?=$UPDATE?></span>
           </p>
           <p>
-            <strong style="color:#6C7A89;"><?=$taskLog['DESCRIPTION']?></strong>
+            <strong style="color:#6C7A89;">- <?=$taskLog['DESCRIPTION']?></strong>
           </p>
       </li>
     <?php }?>
