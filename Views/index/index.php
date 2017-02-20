@@ -66,11 +66,11 @@
       <p>งานจัดหาอุปกรณ์หรือชิ้นงานตามสั่ง</p>
     </div>
   </div>
-  <div class="row">
+  <!--<div class="row">
     <h3><strong>ชมตัวอย่างสินค้า</strong></h3>
     <p><span class="glyphicon glyphicon-chevron-down shake-down" style="color:red;"></span></p>
     <a href="<?=URL_Path.'/showcase'?>" class="btn btn-lg btn-primary">Click ! ชมตัวอย่างสินค้าของเรา</a>
-  </div>
+  </div>-->
 </div>
 
 <div id="about" class="container-fluid bg-grey">

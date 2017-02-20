@@ -27,7 +27,7 @@ function myMap() {
     var myCenter = new google.maps.LatLng(12.710309, 101.324773);
     var mapProp = {
         center: myCenter,
-        zoom: 15,
+        zoom: 13,
         scrollwheel: false,
         draggable: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -37,4 +37,13 @@ function myMap() {
         position: myCenter
     });
     marker.setMap(map);
+
+    google.maps.event.addListener(marker, 'click', function() {
+        var pos = map.getZoom();
+        map.setZoom(15);
+        map.setCenter(marker.getPosition());
+        window.setTimeout(function() {
+            map.setZoom(pos);
+        }, 3000);
+    });
 }
