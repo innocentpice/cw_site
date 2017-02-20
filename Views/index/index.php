@@ -92,10 +92,10 @@
   </div>
 </div>
 
-<div id="portfolio" class="container-fluid text-center">
+<div id="portfolio" class="text-center">
   <h2>My Customer</h2><br>
   <h4>ลูกค้าเรา</h4>
-  <div class="row text-center slideanim">
+  <div class="row container-fluid text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
         <img src="http://www.syssteel.com/sys/wp-content/themes/aselia/images/logo.png" alt="SYS" style="width:400px;height:200px;">
@@ -122,7 +122,7 @@
   </div><br>
   
   <h2>นโยบายผู้บริหาร</h2>
-  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <div id="myCarousel" class="container-fluid carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
