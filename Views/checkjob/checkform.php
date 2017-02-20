@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="<?=URL_Path?>/#home">CWG</a>
+          <a class="navbar-brand" href="<?=URL_Path?>/#home">CWGREAT</a>
         </div>
         <div class="collapse navbar-collapse" id="main_nav">
           <ul class="nav navbar-nav navbar-right">

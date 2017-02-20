@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>                        
           </button>
-          <a class="navbar-brand" href="#home">CWG</a>
+          <a class="navbar-brand" href="#home">CWGREAT</a>
         </div>
         <div class="collapse navbar-collapse" id="main_nav">
           <ul class="nav navbar-nav navbar-right">
@@ -21,8 +21,11 @@
       </div>
     </nav>
     <div class="jumbotron text-center">
-      <h1>CW GREAT COMPANY LIMITED</h1> 
-      <p>รับผลิตชิ้นงานตามแบบ</p> 
+      <h1>
+        CW GREAT COMPANY LIMITED<br>
+        <small>Quality is Our Job</small>
+      </h1> 
+      <p>บริการผลิตชิ้นงานตามแบบทุกชนิด</p> 
       <form action="<?=URL_Path.'/checkjob'?>" method="POST" class="form-inline">
         <div class="input-group">
           <input type="text" class="form-control" size="50" name="JobNo" placeholder="กรอกรหัสสั่งซื้อ เพื่อตรวจสอบสถานะสินค้า" required>
@@ -66,24 +69,25 @@
   <div class="row">
     <h3><strong>ชมตัวอย่างสินค้า</strong></h3>
     <p><span class="glyphicon glyphicon-chevron-down shake-down" style="color:red;"></span></p>
-    <a href="#" class="btn btn-lg btn-primary">Click ! ชมตัวอย่างสินค้าของเรา</a>
+    <a href="<?=URL_Path.'/showcase'?>" class="btn btn-lg btn-primary">Click ! ชมตัวอย่างสินค้าของเรา</a>
   </div>
 </div>
 
 <div id="about" class="container-fluid bg-grey">
   <div class="row text-center">
-    <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    <span class="glyphicon glyphicon-globe logo slideanim" style="color:#3498db;"></span>
   </div>
-  <div class="row" style="margin-top:4rem;">
-    <div class="col-md-6 text-center slideanim">
-      <h2>บริษัท ซีดับบลิวเกรซ จำกัด.<br><small>ผู้นำด้านการผลิตชิ้นงานตามแบบ</small></h2>
-      <h4><strong>Info:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-md-6 text-center slideanim">
-      <h2>ประวัติและความเป็นมาของบริษัท<br><small>เรามุ่งมันพัฒนาตั้งแต่อดีตถึงบัจจุบัน</small></h2>
-      <h4><strong>Info:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="container">
+    <div class="row" style="margin-top:4rem;">
+      <div class="col-xs-12 text-center slideanim">
+        <h2>บริษัท ซีดับบลิวเกรซ จำกัด.<br><small>ผู้นำด้านการผลิตชิ้นงานตามแบบ</small></h2>
+        <h4>
+          <strong>บริษัท ซีดับบลิวเกรซ จำกัด.</strong>
+          ตั้งอยูเลขที่ 29/2 หมู 1 ตําบลนาตาขวัญ อําเภอเมือง จังหวัดระยอง 21000 บนเนื้อที่จํานวน 5 ไร เปนบริษัทของคนไทย กอตั้งโดยคุณณัชพล ศรีดา และคุณชัยวัฒน บุญทอง ในป พ.ศ. 2550 ทุนจดทะเบียน 2,000,000 บาท </h4><br>
+        <h4>
+          ใหบริการผลิตชิ้นงานตามแบบทุกชนิด เชน งานผลิตชิ้นสวนดวยเครื่อง CNC ชิ้นสวนอะไหลเครื่องจักรกล ชิ้นสวนรถยนตและรถมอเตอรไซค รวมถึง งานกลึง งานกัด งานไส งานปาด งานควาน งานมิลลิ่ง งานเจียร งานเจาะรู งานตาปเกลียว และงานเชื่อมประกอบ
+        </h4>
+      </div>
     </div>
   </div>
 </div>
@@ -129,13 +133,22 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+        <h4>
+          <strong>" สร้างความมั่นใจให้ลูกค้า "</strong><br>
+          <span style="font-style:normal;">เพื่อใหมั่นใจวา จะไดรับสินคาที่มีคุณภาพ ราคายุติธรรม สงมอบสินคาตรงเวลา</span>
+        </h4>
       </div>
       <div class="item">
-        <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+        <h4>
+          <strong>" มีมาตรฐานการผลิต "</strong><br>
+          <span style="font-style:normal;">กําหนดมาตรฐานการผลิตที่มีระบบควบคุมคุณภาพ และสามารถตรวจสอบได้ทุกขั้นตอน</span>
+        </h4>
       </div>
       <div class="item">
-        <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+        <h4>
+          <strong>" พัฒนางานบริการอย่างต่อเนื่อง "</strong><br>
+          <span style="font-style:normal;">เพื่อตอบสนองให้ตรงกับความต้องการ และความพึงพอใจของลูกค้า</span>
+        </h4>
       </div>
     </div>
 
@@ -152,6 +165,7 @@
 </div>
 
 <div id="contact" class="container-fluid bg-grey slideanim">
+  
   <h2 class="text-center">
     สำนักงานใหญ่<br>
     <small>บริษัท ซีดับบลิวเกรซ จำกัด.</small>

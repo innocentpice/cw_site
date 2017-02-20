@@ -75,7 +75,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     </p>
     <p>
       รายละเอียดงาน: 
-      <textarea readonly="" class="col-xs-12" rows="10"><?=$this->task[3]?></textarea>
+      <textarea readonly="" style="border-radius:1rem;" class="col-xs-12" rows="10"><?=$this->task[3]?></textarea>
     </p>
   </div>
   </div>
@@ -86,7 +86,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
     <ul style="list-style: none;padding:0px;margin:0px;">
     <?php foreach ($this->taskLog as $taskLog) { ?>
-      <li class="thumbnail info" style="padding:1rem;border-radius:1rem;">
+      <li class="thumbnail" style="padding:1rem;border-radius:1rem;">
           <?php
             $time = strtotime($taskLog['DATE']);
             $d = ceil((time() - $time)/60/60/24);
@@ -97,7 +97,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
             }
           ?>
           <p>
-            <span class="label label-success"><i class="fa fa-clock-o"></i>&nbsp;<?=date('d M Y h:i',$time)?></span>
+            <span class="label label-success"><i class="fa fa-clock-o"></i>&nbsp;<?=date('F d, Y ( h:i )',$time)?></span>
             <?=$UPDATE?>
           </p>
           <p>
