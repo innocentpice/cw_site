@@ -180,17 +180,20 @@ body {
 }
 
 .label-update {
-    animation: label-update 0.5s infinite;
+    animation: label-update 5s infinite;
 }
 
 @keyframes label-update {
     0% {
-        background-color: #3498db;
+        background-color: #c0392b;
     }
-    50% {
-        background-color: #ecf0f1;
+    10% {
+        background-color: #f1c40f;
+    }
+    20% {
+        background-color: #c0392b;
     }
     100% {
-        background-color: #3498db;
+        background-color: #c0392b;
     }
 }

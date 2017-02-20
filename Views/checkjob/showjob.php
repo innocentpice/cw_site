@@ -89,8 +89,8 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
       <li class="thumbnail" style="padding:1rem;padding-top:2rem;border-radius:1rem;">
           <?php
             $time = strtotime($taskLog['DATE']);
-            $d = ceil((time() - $time)/60/60/24);
-            if($d>0){
+            $d = intval(ceil((time() - $time)/60/60/24));
+            if($d <= 1){
               $UPDATE = '<span class="label label-update" style="padding:0.1rem 0.2rem;">UPDATE</span>';
             }else{
               $UPDATE = null;
