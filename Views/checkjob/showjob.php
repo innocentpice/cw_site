@@ -91,12 +91,12 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
             $time = strtotime($taskLog['DATE']);
             $d = ceil((time() - $time)/60/60/24);
             if($d>0){
-              $UPDATE = '<span class="label label-update" style="padding:0.2rem 0.5rem;">UPDATE</span>';
+              $UPDATE = '<span class="label label-update" style="padding:0.1rem 0.2rem;">UPDATE</span>';
             }else{
               $UPDATE = null;
             }
           ?>
-          <p>
+          <p style="display:block;">
             <span class="label label-success" style="padding:0.6rem;"><i class="fa fa-clock-o"></i>&nbsp;<?=date('F d, Y ( h:i )',$time)?> <?=$UPDATE?></span>
           </p>
           <p>
