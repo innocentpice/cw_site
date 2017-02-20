@@ -178,3 +178,19 @@ body {
         border-left: 2px solid #2ecc71;
     }
 }
+
+.label-update {
+    animation: label-update 0.5s infinite;
+}
+
+@keyframes label-update {
+    0% {
+        background-color: #3498db;
+    }
+    50% {
+        background-color: #ecf0f1;
+    }
+    100% {
+        background-color: #3498db;
+    }
+}

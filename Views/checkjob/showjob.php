@@ -14,7 +14,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
 <div id="timeline" class="container-fluid">
   <section id="Steps" class="steps-section">
     <h2 class="steps-header">
-      กำหนดการส่งมอบชิ้นงาน
+      <strong>กำหนดการส่งมอบชิ้นงาน</strong>
     </h2>
     <div class="steps-timeline">
       <div class="steps-one complete">
@@ -59,39 +59,50 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
   </section>
 </div>
 
-<div class="container-fluid">
-  <div class="col-md-6 col-sm-12" style="padding-bottom:3rem;">
-    <header class="clearfix text-center" style="padding-bottom:3rem;">
-      <h3>รายละเอียดชิ้นงาน</h3>
-    </header>
-    <div class="col-sm-8 col-sm-offset-2 clearfix">
-      <p>
-        หมายเลขคำสั่งซื้อ:
-        <strong> <?=$this->task[1]?></strong>
-      </p>
-      <p>
-        ผู้สั่งซื้อ:
-        <strong> <?=$this->task[2]?></strong>
-      </p>
-      <p>
-        รายละเอียดงาน: 
-        <textarea readonly="" class="col-xs-12" rows="10"><?=$this->task[3]?></textarea>
-      </p>
-    </div>
+<div class="row">
+  <div class="container-fluid col-md-6 col-sm-12" style="padding-bottom:3rem;">
+  <header class="clearfix text-center" style="padding-bottom:3rem;">
+    <h3><strong>รายละเอียดชิ้นงาน</strong></h3>
+  </header>
+  <div class="col-sm-8 col-sm-offset-2 clearfix">
+    <p>
+      หมายเลขคำสั่งซื้อ:
+      <strong> <?=$this->task[1]?></strong>
+    </p>
+    <p>
+      ผู้สั่งซื้อ:
+      <strong> <?=$this->task[2]?></strong>
+    </p>
+    <p>
+      รายละเอียดงาน: 
+      <textarea readonly="" class="col-xs-12" rows="10"><?=$this->task[3]?></textarea>
+    </p>
   </div>
-  <div class="col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;min-height:50rem;">
+  </div>
+  <div class="container-fluid col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;min-height:50rem;">
     <header class="clearfix text-center" style="padding-bottom:3rem;">
-      <h3>สถานะสินค้าบัจจุบัน</h3>
+      <h3><strong>สถานะสินค้าบัจจุบัน</strong></h3>
     </header>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
-    <ul style="list-style: none;">
+    <ul style="list-style: none;padding:0px;margin:0px;">
     <?php foreach ($this->taskLog as $taskLog) { ?>
-      <li>
-        <i class="fa fa-clock-o"></i>
-        <?=substr($taskLog['DATE'],0,-3)?>: <br>
-        <strong>
-          |- <?=$taskLog['DESCRIPTION']?>
-        </strong>
+      <li class="thumbnail info" style="padding:1rem;border-radius:1rem;">
+          <?php
+            $time = strtotime($taskLog['DATE']);
+            $d = ceil((time() - $time)/60/60/24);
+            if($d>0){
+              $UPDATE = '<span class="label label-update">UPDATE</span>';
+            }else{
+              $UPDATE = null;
+            }
+          ?>
+          <p>
+            <span class="label label-success"><i class="fa fa-clock-o"></i>&nbsp;<?=date('d M Y h:i',$time)?></span>
+            <?=$UPDATE?>
+          </p>
+          <p>
+            <strong style="color:#6C7A89;"><?=$taskLog['DESCRIPTION']?></strong>
+          </p>
       </li>
     <?php }?>
     </ul>
@@ -99,9 +110,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
   </div>
 </div>
 
-
-
-<footer class="container-fluid text-center">
+<footer class="container-fluid text-center" style="padding-top:3rem;">
   <a href="#checkjob" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>

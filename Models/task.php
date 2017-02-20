@@ -48,7 +48,7 @@ class task extends Model {
         
         // TASK LOG
         if($result == 00000){
-            $this->addtasklog($query[0],'ได้รับคำสั่งซื้อเรียบร้อยแล้ว');
+            $this->addtasklog($query[0],'ได้รับคำสั่งซื้อเรียบร้อยแล้วค่ะ');
         }
         
         return $result;
@@ -64,7 +64,7 @@ class task extends Model {
     function taskedit($query,$status){
         if(isset($status)){
             if($status == 4){
-                $this->addtasklog($query,'จัดส่งสินค้าเรียบร้อยแล้ว ขอบคุณที่ใช่บริการค่ะ',4);
+                $this->addtasklog($query,'จัดส่งสินค้าเรียบร้อยแล้ว ขอบคุณที่ใช้บริการค่ะ',4);
             }
             $sql = "UPDATE TASK SET ".
             "STATUS = :STATUS WHERE JOB_NO = :JOB_NO";
