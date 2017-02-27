@@ -181,10 +181,14 @@
     <p><span class="glyphicon glyphicon-map-marker"></span> Rayong, TH</p>
     <p>
       <span class="glyphicon glyphicon-earphone"></span> Tel: 038-948-340 , 
-      <span class="glyphicon glyphicon-phone"></span> Mobile: 081-430-9217
+      <span class="glyphicon glyphicon-phone"></span> Mobile: 081-430-9217, 086-978-8038
     </p>
     <p><i class="fa fa-fax"></i> Fax: 038948341</p>
-    <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">sales@cwgreat.co.th</a></p>
+    <p>
+      <span class="glyphicon glyphicon-envelope"></span> 
+      <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">sales@cwgreat.co.th</a>,&nbsp;
+      <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">chaiwat@cwgreat.co.th</a>
+    </p>
   </div>
 </div>
 
