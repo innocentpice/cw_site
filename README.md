@@ -1,3 +1,11 @@
+:: 27/02/2560 ::
+> -- TO --
+- USER GUID / MANUAL
+- Monitor Data.
+- Customer Data
+- Order No. Genarator.
+- Order Contact info
+
 :: 17/02/2560 ::
 
 > -- TODO --
