@@ -1,32 +1,27 @@
 <header class="text-center" style="margin-bottom:2rem;">
-    <h1>MY JOB</h1>
+    <h1>JOB Management.</h1>
 </header>
 <?php
     
     echo '<div class="table-responsive"><table class="table table-striped table-hover table-bordered">';
     $thead_title = ['NO.','JOB NO.','NAME','Detail','Quantity','START','DEADLINE'];
-    $thead_status[0] = 'STATUS => Order Received';
-    $thead_status[1] = 'STATUS => Processing';
-    $thead_status[2] = 'STATUS => Shipping';
-    for($j=0;$j<=2;$j++){
+    $thead_status[0] = 'STATUS => DONE';
+    for($j=0;$j<1;$j++){
     echo '<thead class="bg-info">';
     echo '<tr><th class="bg-primary text-center" colspan="12">' 
     . $thead_status[$j] 
     . '</th></tr>';
     echo '<tr>';
-    for($i=1;$i<7;$i++){
+    for($i=0;$i<7;$i++){
         echo '<th>' . $thead_title["$i"] . '</th>';
     }
     echo '<th>SUPPILER</th><th>STAFF</th>';
     echo '<th colspan="3">CUSTOM</th>';
     echo '</tr></thead>';
     echo '<tbody>';
-    if(empty($this->list_data[$j])){
-      echo '<tr><td class="text-center bg-success" colspan="9">ไม่มีข้อมูล</td></tr>';
-    }
     foreach($this->list_data[$j] as $data){
         echo '<tr>';
-        for($i=1;$i<8;$i++){
+        for($i=0;$i<8;$i++){
             if($i==4){
               echo '<td>' . $data[$i] . '&nbsp;' . $data[++$i] . '</td>';
             }else if($i==3){
@@ -52,7 +47,7 @@
         echo '<td class="text-center">';
         echo $data['STAFF_NAME']=='' ? '-' :$data['STAFF_NAME'];
         echo '</td>';
-        echo '<td class="text-center">'.
+        echo '<td class="text-center" colspan="3">'.
             '<a href="'.URL_Path.'/sup/job/'.$data[1].'" class="btn btn-info btn-md">'.
             '<i class="glyphicon glyphicon-zoom-in"></i></a></td>';
         echo '</tr>';

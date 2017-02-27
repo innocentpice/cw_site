@@ -124,4 +124,13 @@ class sup extends Controller {
             $this->RederAsPanel($page);
         }
     }
+    
+    function jobdone(){
+        $this->loadModel('sup_job');
+        $sup_no = $_SESSION['sup_no'];
+        $this->view->list_data[0] = $this->sup_job->task_list($sup_no,4);
+        $this->view->JSInject[1] = URL_Public.'/js/tasklist.js';
+        $page[0] = 'sup/jobdone';
+        $this->RederAsPanel($page);
+    }
 }

@@ -14,6 +14,7 @@
             </li>
             <ul class="sub-menu collapse" id="nav_task">
                 <a href="<?=URL_Path.'/sup/job'?>"><li><i class="fa fa-list-ul fa-md"></i>MY JOB</li></a>
+                <a href="<?=URL_Path.'/sup/jobdone'?>"><li><i class="fa fa-check fa-md"></i>JOB DONE</li></a>
             </ul>
             
             <a href="#"><li class="primary_nav">

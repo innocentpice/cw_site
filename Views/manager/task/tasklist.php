@@ -21,6 +21,9 @@
     echo '<th colspan="3">CUSTOM</th>';
     echo '</tr></thead>';
     echo '<tbody>';
+    if(empty($this->list_data[$j])){
+      echo '<tr><td class="text-center bg-success" colspan="13">ไม่มีข้อมูล</td></tr>';
+    }
     foreach($this->list_data[$j] as $data){
         echo '<tr>';
         for($i=0;$i<8;$i++){

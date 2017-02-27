@@ -17,15 +17,26 @@
                             $S2 = 'disabled';
                         }else if($this->taskStatus == 3){
                             $S3 = 'disabled';
+                        }else if($this->taskStatus > 3){
+                            $S1 = 'disabled';
+                            $S2 = 'disabled';
+                            $S3 = 'disabled';
+                            $MSG = 'DONE';
                         }
+                        
                     ?>
-                    <a href="<?=URL_Path.'/sup/job/'.$this->taskID?>&CHANGESTATUS=1" class="btn btn-sm btn-default <?=$S1?>">O</a>
-                    <a href="<?=URL_Path.'/sup/job/'.$this->taskID?>&CHANGESTATUS=2" class="btn btn-sm btn-default <?=$S2?>">P</a>
-                    <a href="<?=URL_Path.'/sup/job/'.$this->taskID?>&CHANGESTATUS=3" class="btn btn-sm btn-default <?=$S3?>">S</a>
+                    <?php if($MSG == 'DONE'){?>
+                        <span class="label label-primary"><i class="fa fa-check fa-sm"></i>&nbsp;&nbsp;<strong>JOB DONE</strong></span>
+                    <?php }else{?>
+                        <a href="<?=URL_Path.'/sup/job/'.$this->taskID?>&CHANGESTATUS=2" class="btn btn-sm btn-default <?=$S2?>">P</a>
+                        <a href="<?=URL_Path.'/sup/job/'.$this->taskID?>&CHANGESTATUS=3" class="btn btn-sm btn-default <?=$S3?>">S</a>
+                    <?php }?>
                 </div>
                 <div class="col-xs-5 col-md-2 inline text-right">
+                    <?php if($this->taskStatus >= 2 && $this->taskStatus <= 3){?>
                     <button role="button" data-toggle="collapse" href="#ADDTASKLOG" aria-expanded="false" aria-controls="ADDTASKLOG" 
                     class="btn btn-md btn-default"><i class="glyphicon glyphicon-plus"></i> ADDLOG</button>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -67,7 +78,7 @@
                     <tr>
                         <th scope="row"><?=substr($taskLog['DATE'],0,-3)?></th>
                         <td colspan="2"><?=$taskLog['DESCRIPTION']?></td>
-                        <td class="text-right"><a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a></td>
+                        <td class="text-right"></td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -88,7 +99,11 @@
                     <tr>
                         <th scope="row"><?=substr($taskLog['DATE'],0,-3)?></th>
                         <td colspan="2"><?=$taskLog['DESCRIPTION']?></td>
-                        <td class="text-right"><a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a></td>
+                        <td class="text-right">
+                            <?php if($MSG != 'DONE'){?>
+                            <a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a>
+                            <?php }?>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -109,7 +124,11 @@
                     <tr>
                         <th scope="row"><?=substr($taskLog['DATE'],0,-3)?></th>
                         <td colspan="2"><?=$taskLog['DESCRIPTION']?></td>
-                        <td class="text-right"><a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a></td>
+                        <td class="text-right">
+                            <?php if($MSG != 'DONE'){?>
+                            <a href="#" class="btn btn-sm btn-danger" onClick="deletetasklog(<?=$taskLog['NO']?>);"><i class="glyphicon glyphicon-trash"></i></a>
+                            <?php }?>
+                        </td>
                     </tr>
                     <?php } ?>
                 </tbody>
