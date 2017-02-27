@@ -40,7 +40,7 @@ class sup extends Controller {
     
     private function auth(){
         if(empty($_SESSION['username']) || $_SESSION['permiss'] != 2){
-            if($_POST['auth']){
+            if(@$_POST['auth']){
                 $this->loadModel('auth');
                 $result = $this->auth->sup_login($_POST['username'],$_POST['password']);
                 if($result){
