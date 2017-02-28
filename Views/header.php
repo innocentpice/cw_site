@@ -10,6 +10,7 @@
         <meta name="robots" content="index,follow">
         <script type="application/ld+json"> { "@context": "http://schema.org", "@type": "Organization", "url": "http://www.cwgreat.co.th", "contactPoint": [{ "@type": "ContactPoint", "telephone": "+66 81-430-9217", "contactType": "customer service" }] } </script>
         <link rel="canonical" href="http://www.cwgreat.co.th/">
+        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/5.0.0/normalize.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
         <link rel="stylesheet" href="<?=URL_Public.'/css/bootstrap-tour.min.css'?>">
@@ -29,4 +30,4 @@
         ?>
         
     </head>
-    <body <?=$this->BodyAti?>>
+    <body <?=@$this->BodyAti?>>
