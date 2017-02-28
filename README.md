@@ -1,3 +1,13 @@
+:: 28/02/2560 ::
+> -- TO --
+- Monitor Data.
+- Customer Data
+- Order No. Genarator.
+- Order Contact info
+
+> -- SUCCESS --
+- Add Checkstatus Tour
+
 :: 27/02/2560 ::
 > -- TO --
 - USER GUID / MANUAL
