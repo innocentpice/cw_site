@@ -10,6 +10,8 @@ class checkjob extends Controller {
         $this->view->JSInject[0] = URL_Public . '/js/checkjob.js';
         $this->view->CSSInject[0] = URL_Public . '/css/main.css';
         $this->view->CSSInject[1] = URL_Public . '/css/checkjob.css';
+        // BOOSTRAP TOUR SCRIPT
+        $this->view->JSInject[1] = URL_Public . '/js/tour/checkstatus.js';
         
         if(isset($_POST['JobNo'])){
             $task = $this->task->checkjob($_POST['JobNo']);

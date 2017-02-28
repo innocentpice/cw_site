@@ -1,25 +1,6 @@
 <div id="checkjob" class="header-img">
   <div class="texture">
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_nav">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="<?=URL_Path?>/#home">CWGREAT</a>
-        </div>
-        <div class="collapse navbar-collapse" id="main_nav">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?=URL_Path?>/#services">บริการของเรา</a></li>
-            <li><a href="<?=URL_Path?>/#about">เกี่ยวกับบริษัท</a></li>
-            <li><a href="<?=URL_Path?>/#portfolio">ผลงานของเรา</a></li>
-            <li><a href="<?=URL_Path?>/#contact">ติดต่อเรา</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <?php $this->URL_INDEX=URL_Path;$this->render('index/navbar');?>
     <div class="jumbotron">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">

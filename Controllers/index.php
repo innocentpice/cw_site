@@ -10,6 +10,8 @@ class index extends Controller {
         
         // GOOGLE MAP
         $this->view->JSInject[1] = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhaZasvsKfylY1iFaNwNoue6EACVXH9LQ&callback=myMap';
+        // BOOSTRAP TOUR SCRIPT
+        $this->view->JSInject[2] = URL_Public . '/js/tour/checkstatus.js';
         
         $this->view->BodyAti = 'id="home" data-spy="scroll" data-target=".navbar" data-offset="60"';
         $this->view->render('header');

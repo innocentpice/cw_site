@@ -60,7 +60,7 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
 </div>
 
 <div class="row">
-  <div class="container-fluid col-md-6 col-sm-12" style="padding-bottom:3rem;">
+  <div id="job_info" class="container-fluid col-md-6 col-sm-12" style="padding-bottom:3rem;">
   <header class="clearfix text-center" style="padding-bottom:3rem;">
     <h3><strong>รายละเอียดชิ้นงาน</strong></h3>
   </header>
@@ -79,9 +79,9 @@ Task Log : <?php foreach ($this->taskLog as $taskLog) { ?>
     </p>
   </div>
   </div>
-  <div class="container-fluid col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;min-height:50rem;">
+  <div id="job_log" class="container-fluid col-md-6 col-sm-12 t_line" style="padding-bottom:3rem;min-height:50rem;">
     <header class="clearfix text-center" style="padding-bottom:3rem;">
-      <h3><strong>สถานะสินค้าบัจจุบัน</strong></h3>
+      <h3><strong>รายละเอียดของสถานะสินค้าบัจจุบัน</strong></h3>
     </header>
     <div class="col-sm-8 col-sm-offset-2 clearfix">
     <ul style="list-style: none;padding:0px;margin:0px;">

@@ -1,25 +1,6 @@
 <div class="header-img">
   <div class="texture">
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main_nav">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="#home">CWGREAT</a>
-        </div>
-        <div class="collapse navbar-collapse" id="main_nav">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#services">บริการของเรา</a></li>
-            <li><a href="#about">เกี่ยวกับบริษัท</a></li>
-            <li><a href="#portfolio">ผลงานของเรา</a></li>
-            <li><a href="#contact">ติดต่อเรา</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <?php $this->render('index/navbar');?>
     <div class="jumbotron text-center">
       <h1>
         CW GREAT COMPANY LIMITED<br>
@@ -28,9 +9,10 @@
       <p>บริการผลิตชิ้นงานตามแบบทุกชนิด</p> 
       <form action="<?=URL_Path.'/checkjob'?>" method="POST" class="form-inline">
         <div class="input-group">
-          <input type="text" class="form-control" size="50" name="JobNo" placeholder="กรอกรหัสสั่งซื้อ เพื่อตรวจสอบสถานะสินค้า" required>
+          <input id="checkstatus_text" type="text" class="form-control" size="50" name="JobNo" placeholder="กรอกรหัสสั่งซื้อ เพื่อตรวจสอบสถานะสินค้า" required>
           <div class="input-group-btn">
-            <button type="submit" class="btn btn-danger">Check Process</button>
+            <button id="checkstatus_btn" type="submit" class="btn btn-danger">Check Process</button>
+            <a id="checkstatus_help" class="btn btn-success"><i class="fa fa-book fa-sm"></i></a>
           </div>
         </div>
       </form>
@@ -98,7 +80,7 @@
   <div class="row container-fluid text-center slideanim">
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="http://www.syssteel.com/sys/wp-content/themes/aselia/images/logo.png" alt="SYS" style="width:400px;height:200px;">
+        <img src="<?=URL_Public?>/img/customer/sys.png" alt="SYS" style="width:400px;height:200px;">
         <p>
           <strong>SIAM YAMATO STEEL COMPANY LIMITED</strong>
         </p>
@@ -107,7 +89,7 @@
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="http://www.job-passport.com/uploads/company/logo/f44683de06c992ef8b7450c3f69c531b.jpg" alt="TOKAI" style="width:400px;height:200px;">
+        <img src="<?=URL_Public?>/img/customer/ter.jpg" alt="TOKAI" style="width:400px;height:200px;">
         <p><strong>TOKAI EASTERN RUBBER (THAILAND), LTD.</strong></p>
         <p>โตไก อิสเทิร์น รับเบอร์ (ประเทศไทย) จํากัด</p>
       </div>
@@ -164,8 +146,7 @@
   </div>
 </div>
 
-<div id="contact" class="container-fluid bg-grey slideanim">
-  
+<div id="contact" class="container-fluid bg-grey slideanim" style="padding-top:5rem;">
   <h2 class="text-center">
     สำนักงานใหญ่<br>
     <small>บริษัท ซีดับบลิวเกรซ จำกัด.</small>
