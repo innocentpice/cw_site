@@ -5,6 +5,6 @@ class sitemap extends Controller {
         parent:: __construct();
     }
     function index(){
-        $this->view->render('sitemap/index');
+        $this->view->asXml('sitemap/index');
     }
 }
