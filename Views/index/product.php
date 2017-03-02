@@ -1,5 +1,5 @@
 <?php
-    require_once './.faker/src/autoload.php';
+    require_once './.DEV/Faker/autoload.php';
     $faker = Faker\Factory::create();
     echo '<script>';echo 'window.productImg = {};';for($i=0;($i+1)<=16;$i++){
 ?>
