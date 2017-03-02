@@ -48,12 +48,9 @@
       <p>งานจัดหาอุปกรณ์หรือชิ้นงานตามสั่ง</p>
     </div>
   </div>
-  <!--<div class="row">
-    <h3><strong>ชมตัวอย่างสินค้า</strong></h3>
-    <p><span class="glyphicon glyphicon-chevron-down shake-down" style="color:red;"></span></p>
-    <a href="<?=URL_Path.'/showcase'?>" class="btn btn-lg btn-primary">Click ! ชมตัวอย่างสินค้าของเรา</a>
-  </div>-->
 </div>
+
+<?php $this->render('index/product');?>
 
 <div id="about" class="container-fluid bg-grey">
   <div class="row text-center">
@@ -164,7 +161,7 @@
       <span class="glyphicon glyphicon-earphone"></span> Tel: 038-948-340 , 
       <span class="glyphicon glyphicon-phone"></span> Mobile: 081-430-9217, 086-978-8038
     </p>
-    <p><i class="fa fa-fax"></i> Fax: 038948341</p>
+    <p><i class="fa fa-fax"></i> Fax: 038-948-341</p>
     <p>
       <span class="glyphicon glyphicon-envelope"></span> 
       <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">sales@cwgreat.co.th</a>,&nbsp;
