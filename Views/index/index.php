@@ -50,7 +50,7 @@
   </div>
 </div>
 
-<?php $this->render('index/product');?>
+<?php // $this->render('index/product');?>
 
 <div id="about" class="container-fluid bg-grey">
   <div class="row text-center">

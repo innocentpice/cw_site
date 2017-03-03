@@ -70,7 +70,6 @@ function productResize(width) {
 
 function checksize() {
     var width = window.outerWidth;
-    console.log(width);
     if (width <= 425) {
         window.deviceSize = 1;
     }

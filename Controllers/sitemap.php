@@ -7,4 +7,7 @@ class sitemap extends Controller {
     function index(){
         $this->view->asXml('sitemap/index');
     }
+    function url(){
+        $this->view->asXml('sitemap/url');
+    }
 }

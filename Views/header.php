@@ -29,6 +29,5 @@
                 }
             }
         ?>
-        
     </head>
     <body <?=@$this->BodyAti?>>
