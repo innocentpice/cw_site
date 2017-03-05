@@ -114,7 +114,7 @@
       <div class="item active">
         <h4>
           <strong>" สร้างความมั่นใจให้ลูกค้า "</strong><br>
-          <span style="font-style:normal;">เพื่อใหมั่นใจวา จะไดรับสินคาที่มีคุณภาพ ราคายุติธรรม สงมอบสินคาตรงเวลา</span>
+          <span style="font-style:normal;">เพื่อให้มั่นใจว่า จะได้รับสินค้าที่มีคุณภาพ ราคายุติธรรม ส่งมอบสินค้าตรงเวลา</span>
         </h4>
       </div>
       <div class="item">
