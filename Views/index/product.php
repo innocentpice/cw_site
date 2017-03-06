@@ -1,10 +1,16 @@
 <?php
-    require_once './.DEV/Faker/autoload.php';
-    $faker = Faker\Factory::create();
-    echo '<script>';echo 'window.productImg = {};';for($i=0;($i+1)<=16;$i++){
+    echo '<script>';
+    function randomGen($min, $max, $quantity) {
+        $numbers = range($min, $max);
+        shuffle($numbers);
+        return array_slice($numbers, 0, $quantity);
+    }
+    $img = randomGen(1,22,16);
+    echo 'window.productImg = {};';for($i=1;$i<=16;$i++){
 ?>
-    window.productImg[<?=$i?>] = {};
-    window.productImg[<?=$i?>].src = "<?=$faker->imageUrl(200, 200, 'technics');?>";
+    window.productImg[<?=$i-1?>] = {};
+    window.productImg[<?=$i-1?>].src = "<?=URL_Public.'/img/product/'.$img[$i-1].'.jpg'?>";
+    
 <?php }echo '</script>';?>
 
 <h3 class="text-center">ตัวอย่างชิ้นงาน</h3>

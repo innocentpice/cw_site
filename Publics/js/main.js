@@ -39,7 +39,7 @@ function pdAddImg(target, targetCtrl, data, show = 1) {
                 option = 'col-xs-3';
             }
             dom += '<div class="' + option + '">';
-            dom += '<img class="img-thumbnail" src="' + img + '">';
+            dom += '<img class="img-thumbnail" style="width:250px;height:250px;" src="' + img + '">';
             dom += '</div>';
             i++;
         }
