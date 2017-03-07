@@ -1,5 +1,16 @@
+:: 5/02/2560 ::
+> -- TODO --
+- Monitor Data.
+- Customer Data
+- Order No. Genarator.
+- Order Contact info
+
+> -- SUCCESS --
+- PRODUCT IMG SAMPLE
+
+- Order
 :: 28/02/2560 ::
-> -- TO --
+> -- TODO --
 - Monitor Data.
 - Customer Data
 - Order No. Genarator.

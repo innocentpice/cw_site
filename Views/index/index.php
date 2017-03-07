@@ -162,10 +162,12 @@
       <span class="glyphicon glyphicon-phone"></span> Mobile: 081-430-9217, 086-978-8038
     </p>
     <p><i class="fa fa-fax"></i> Fax: 038-948-341</p>
+    <p><i class="fa"><img src="<?=URL_Public?>/img/icon/LINE_ICON.png" style="width:25px;height:25px;"></i> LINE ID: 0814309217</p>
+    <p><i class="fa fa-facebook-square"></i> Facebook: <a href="http://www.facebook.com/cwgreat" target="blank" style="text-decoration:none;">www.facebook.com/cwgreat</a></p>
     <p>
       <span class="glyphicon glyphicon-envelope"></span> 
       <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">sales@cwgreat.co.th</a>,&nbsp;
-      <a href="mailto:sales@cwgreat.co.th" style="text-decoration:none;">chaiwat@cwgreat.co.th</a>
+      <a href="mailto:chaiwat@cwgreat.co.th" style="text-decoration:none;">chaiwat@cwgreat.co.th</a>
     </p>
   </div>
 </div>
