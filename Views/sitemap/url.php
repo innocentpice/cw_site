@@ -10,4 +10,9 @@
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
+  <url>
+    <loc><?=URL_Path?>/product</loc>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+  </url>
 </urlset>

@@ -5,7 +5,7 @@
         shuffle($numbers);
         return array_slice($numbers, 0, $quantity);
     }
-    $img = randomGen(1,22,16);
+    $img = randomGen(1,108,16);
     echo 'window.productImg = {};';for($i=1;$i<=16;$i++){
 ?>
     window.productImg[<?=$i-1?>] = {};
@@ -14,6 +14,7 @@
 <?php }echo '</script>';?>
 
 <h3 class="text-center">ตัวอย่างชิ้นงาน</h3>
+<div class="row text-center"><a href="<?=URL_Path?>/product/" class="btn btn-md btn-primary">ดูเพิ่มเติม คลิก..!</a></div>
 <div id="product" class="container-fluid carousel slide text-center" data-ride="carousel">
     <!-- Indicators -->
     <ol id="productList-ctrl" class="carousel-indicators">
