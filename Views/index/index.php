@@ -20,6 +20,26 @@
   </div>
 </div>
 
+<div id="news" class="container-fluid">
+  <h2 class="text-center">ข่าวสารบริษัท</h2>
+  <div class="row">
+    <?php for($i=1;$i<=4;$i++){?>
+    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:2rem;">
+      <div class="thumbnail">
+        <img src="http://placehold.it/500x250/EEE">
+        <div class="caption">
+            <h4>Thumbnail label</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
+            <p class="text-right"><a href="#" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>
+        </div>
+      </div>
+    </div>
+    <?php }?>
+  </div>
+  <div class="row" style="padding-top:2rem;">
+    <p class="text-center"><a href="<?=URL_Path?>/news" class="btn btn-primary btn-md">ดูทั้งหมด คลิก..!</a></p>  
+  </div>
+</div>
 
 <div id="services" class="container-fluid text-center">
   <h2>บริการของเรา</h2>
@@ -179,9 +199,4 @@
   </div>
 </div>
 
-<footer class="container-fluid text-center">
-    <a href="#home" title="To Top">
-      <span class="glyphicon glyphicon-chevron-up"></span>
-    </a>
-    <p>Copyright © 2016 - 2017 CW GREAT Co.,Ltd All rights reserved.</p>
-</footer>
+<?php $this->render('index/index_footer');?>

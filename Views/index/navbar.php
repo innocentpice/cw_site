@@ -10,6 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="main_nav">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="<?=@$this->URL_INDEX?>#news">ข่าวสารบริษัท</a></li>
             <li><a href="<?=@$this->URL_INDEX?>#services">บริการของเรา</a></li>
             <li><a href="<?=@$this->URL_INDEX?>#about">เกี่ยวกับบริษัท</a></li>
             <li><a href="<?=@$this->URL_INDEX?>#portfolio">ผลงานของเรา</a></li>
