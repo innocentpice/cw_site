@@ -59,9 +59,9 @@
   <div class="container">
     <div class="row" style="margin-top:4rem;">
       <div class="col-xs-12 text-center">
-        <h2>บริษัท ซีดับบลิวเกรซ จำกัด.<br><small>ผู้นำด้านการผลิตชิ้นงานตามแบบ</small></h2>
+        <h2>บริษัท ซีดับบลิว เกรท จำกัด.<br><small>ผู้นำด้านการผลิตชิ้นงานตามแบบ</small></h2>
         <h4>
-          <strong>บริษัท ซีดับบลิวเกรซ จำกัด.</strong>
+          <strong>บริษัท ซีดับบลิว เกรท จำกัด.</strong>
           ตั้งอยู่เลขที่ 29/2 หมู่ 1 ตําบลนาตาขวัญ อําเภอเมือง จังหวัดระยอง 21000 บนเนื้อที่จํานวน 5 ไร่ เป็นบริษัทของคนไทย ก่อตั้งโดย คุณชัยวัฒน์ เอกธันยวงศ์  ในปี พ.ศ. 2550 ทุนจดทะเบียน 2,000,000 บาท </h4><br>
         <h4>
           ให้บริการผลิตชิ้นงานตามแบบทุกชนิด เช่น งานผลิตชิ้นส่วนด้วยเครื่อง CNC ชิ้นส่วนอะไหล่เครื่องจักรกล ชิ้นส่วนรถยนต์และรถมอเตอร์ไซค์ รวมถึง งานกลึง งานกัด งานไส งานปาด งานคว้าน งานมิลลิ่ง งานเจียร งานเจาะรู งานต๊าปเกลียว และงานเชื่อมประกอบ
@@ -146,7 +146,7 @@
 <div id="contact" class="container-fluid bg-grey" style="padding-top:5rem;">
   <h2 class="text-center">
     สำนักงานใหญ่<br>
-    <small>บริษัท ซีดับบลิวเกรซ จำกัด.</small>
+    <small>บริษัท ซีดับบลิว เกรท จำกัด.</small>
   </h2>
   <div class="row slideanim">
       <div id="googleMap" style="height:400px;width:100%;"></div>
@@ -176,5 +176,5 @@
     <a href="#home" title="To Top">
       <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
-    <p>Copyright © 2016 - 2017 CWGREAT Co.,Ltd All rights reserved.</p>
+    <p>Copyright © 2016 - 2017 CW GREAT Co.,Ltd All rights reserved.</p>
 </footer>

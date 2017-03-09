@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <title><?php if(isset($this->PageTitle)){echo $this->PageTitle;}else{echo 'CWGREAT Co.,Ltd.';}?> - บริการรับผลิตชิ้นงาน make to order และงานอุปกร์ในงานอุตสาหกรรมทุกชนิด บริการผลิตชิ้นงานตามแบบทุกชนิด งานเชื่อม งานกลึง CNC ราคาเป็นกันเอง</title>
-        <meta name="description" content="บริษัท ซีดับบลิวเกรซ จำกัด. บริการรับผลิตชิ้นงาน make to order และงานอุปกร์ในงานอุตสาหกรรมทุกชนิด บริการผลิตชิ้นงานตามแบบทุกชนิด งานเชื่อม งานกลึง CNC ราคาเป็นกันเอง เลขที่ 29/2 หมู่ 1 ต.นาตาขวัญ อ.เมืองระยอง จ.ระยอง Tel: 038-948-340 Email: sales@cwgreat.co.th" />
+        <title><?php if(isset($this->PageTitle)){echo $this->PageTitle;}else{echo 'CW GREAT Co.,Ltd.';}?> - บริการรับผลิตชิ้นงาน make to order และงานอุปกร์ในงานอุตสาหกรรมทุกชนิด บริการผลิตชิ้นงานตามแบบทุกชนิด งานเชื่อม งานกลึง CNC ราคาเป็นกันเอง</title>
+        <meta name="description" content="บริษัท ซีดับบลิว เกรท  จำกัด. บริการรับผลิตชิ้นงาน make to order และงานอุปกร์ในงานอุตสาหกรรมทุกชนิด บริการผลิตชิ้นงานตามแบบทุกชนิด งานเชื่อม งานกลึง CNC ราคาเป็นกันเอง เลขที่ 29/2 หมู่ 1 ต.นาตาขวัญ อ.เมืองระยอง จ.ระยอง Tel: 038-948-340 Email: sales@cwgreat.co.th" />
         <meta name="google-site-verification" content="F4Lsl2wJrSG8MhSqwc42tVZ5ayCcfUbCdbgDe7orU08" />
         <meta name="keywords" content="บริษัทรับกลึงเหล็ก, โรงกลึง, งานกลึง, งานเชื่อม, อะไหล่เครื่องจักร, กลึงเหล็ก" />
         <meta name="robots" content="index,follow">

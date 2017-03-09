@@ -4,7 +4,7 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center">
-          <h1>CWGreat Co.,Ltd</h1> 
+          <h1>CW Great Co.,Ltd</h1> 
           <p>ระบบตรวจเช็คสถานะสินค้า</p>
           <form action="<?=URL_Path.'/checkjob'?>" method="POST" class="form-inline">
             <div class="input-group">

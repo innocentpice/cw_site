@@ -5,7 +5,7 @@
         shuffle($numbers);
         return array_slice($numbers, 0, $quantity);
     }
-    $img = randomGen(1,108,16);
+    $img = randomGen(1,101,16);
     echo 'window.productImg = {};';for($i=1;$i<=16;$i++){
 ?>
     window.productImg[<?=$i-1?>] = {};
