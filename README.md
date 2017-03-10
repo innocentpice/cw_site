@@ -1,3 +1,19 @@
+:: 10/03/2560 ::
+> -- TODO --
+- เพิ่มระบบ ข่าวสาร และ ระบบหลังบ้าน ในการ เพิ่มข่าวสาร // Process 30%
+- Monitor Data.
+- Customer Data.
+- Order No. Genarator.
+- Order Contact info.
+- Customer Feedback.
+
+> -- PROCESS --
+- EditNews
+
+> -- SUCCESS --
+- ADD NEWS
+
+
 :: 9/03/2560 ::
 > -- TODO --
 - เพิ่มระบบ ข่าวสาร และ ระบบหลังบ้าน ในการ เพิ่มข่าวสาร // Process

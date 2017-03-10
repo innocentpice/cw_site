@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div id="news" class="container-fluid">
+<div id="news" class="container">
   <h2 class="text-center">ข่าวสารบริษัท</h2>
   <div class="row">
     <?php for($i=1;$i<=4;$i++){?>

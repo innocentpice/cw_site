@@ -310,4 +310,69 @@ class manager extends Controller {
         $page[0] = 'manager/supplier/editsup';
         $this->RederAsPanel($page);
     }
+    
+    // news
+    
+    function news($action,$page){
+        if($action == 'add'){
+            $this->AddNews(@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content']);
+        }else if($action > 0){
+            $this->EditNews($action);
+        }else if(empty($action) || $action == 'page'){
+            if(empty($page)){$page = 1;}
+            $this->ViewNews($page);
+        }else {
+            $this->ShowError('NEWS NOT FOUND.');
+        }
+    }
+    
+    
+    private function AddNews($header,$title,$content){
+        if($header != '' && $title != ''){
+            $this->loadModel('news');
+            $result = $this->news->AddNews($header,$title,$content);
+            if($result == '00000'){
+                $page[0] = 'manager/news/addednews';
+                $this->RederAsPanel($page);
+            }else{
+                $this->view->JSInject[1] = URL_Public.'/js/MCE/textboxio/textboxio.js';
+                $this->view->JSInject[2] = URL_Public.'/js/addnews.js';
+                $this->view->ErrorMsg = '<strong>ERROR CODE '.$result.'</strong>';
+                $page[0] = 'manager/news/addnews';
+                $this->RederAsPanel($page);
+            }
+        }else{
+            $this->view->JSInject[1] = URL_Public.'/js/MCE/textboxio/textboxio.js';
+            $this->view->JSInject[2] = URL_Public.'/js/addnews.js';
+            $page[0] = 'manager/news/addnews';
+            $this->RederAsPanel($page);
+        }
+    }
+    
+    
+    private function EditNews($key){
+        $this->loadModel('news');
+        $this->view->News = $this->news->viewNews(0,$key);
+        
+        $this->view->JSInject[1] = URL_Public.'/js/MCE/textboxio/textboxio.js';
+        $this->view->JSInject[2] = URL_Public.'/js/editnews.js';
+        
+        $this->view->KEYNEWS = $key;
+        $page[0] = 'manager/news/editnews';
+        $this->RederAsPanel($page);
+    }
+    
+    
+    
+    private function ViewNews($page=1){
+        $this->loadModel('news');
+        $data = $this->news->viewNews($page);
+        $this->view->News = $data;
+        $this->view->CurPage = $page;
+        $this->view->LastPage = $this->news->countNews();
+        
+        $pages[0] = 'manager/news/viewnews';
+        $this->RederAsPanel($pages);
+    }
+    
 }

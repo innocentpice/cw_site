@@ -15,7 +15,7 @@ class Bootstrap {
         if(file_exists($file)){
             require $file;
         } else {
-            require 'Controllers/error.php';
+            require 'Controllers/errors.php';
             $controller = new Errors();
             $controller->index();
             return false;
@@ -25,13 +25,13 @@ class Bootstrap {
         if(isset($url[1])){
             if(method_exists($controller, $url[1])){
                 if(isset($url[2])){
-                    @$controller->{$url[1]}($url[2]);
+                    @$controller->{$url[1]}($url[2],@$url[3],@$url[4]);
                 }else{
                     @$controller->{$url[1]}();
                 }
             }else{
-                require 'Controllers/error.php';
-                $controller = new Error();
+                require 'Controllers/errors.php';
+                $controller = new Errors();
                 $controller->index();
                 return false;
             }

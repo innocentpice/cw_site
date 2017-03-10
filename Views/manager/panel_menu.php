@@ -26,6 +26,14 @@
                 <a href="<?=URL_Path.'/manager/addsup'?>"><li><i class="fa fa-plus-square fa-md"></i>ADD</li></a>
             </ul>
             
+            <li data-toggle="collapse" data-target="#nav_news" class="collapsed primary_nav">
+              <a href="#"><i class="fa fa-newspaper-o fa-lg"></i> NEWS<span class="arrow"></span></a>
+            </li>
+            <ul class="sub-menu collapse" id="nav_news">
+                <a href="<?=URL_Path.'/manager/news'?>"><li><i class="fa fa-list-ul fa-md"></i>VIEW</li></a>
+                <a href="<?=URL_Path.'/manager/news/add'?>"><li><i class="fa fa-plus-square fa-md"></i>ADD</li></a>
+            </ul>
+            
             <a href="#"><li class="primary_nav">
               <i class="fa fa-book fa-lg"></i> MANUAL 
             </li></a>
