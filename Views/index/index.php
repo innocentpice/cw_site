@@ -20,29 +20,31 @@
   </div>
 </div>
 
-<div id="news" class="container">
-  <h2 class="text-center">ข่าวสารบริษัท</h2>
-  <div class="row">
-    <?php foreach($this->news as $news){?>
-    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:2rem;">
-      <div class="thumbnail">
-        <img src="<?php if(empty($news['IMG_URL'])){ echo URL_Public.'/img/news/default.jpg';}else{echo $news['IMG_URL'];}?>" style="width:250px;height:125px">
-        <div class="caption">
-            <div style="height:15rem;">
-              <h4 style="height:4rem;"><?php if(strlen($news['HEADER']) > 100){ echo substr_replace($news['HEADER'], ' ...', 100); }else{ echo $news['HEADER']; }?></h4>
-              <p><?php if(strlen($news['TITLE']) > 200){ echo substr_replace($news['TITLE'], ' ...', 200); }else{ echo $news['TITLE']; }?></p>
-            </div>
-            <p class="text-right"><i class="fa fa-clock-o"></i>&nbsp;<?=$news['DATE']?></p>
-            <p class="text-right"><a href="<?=URL_Path?>/news/id/<?=$news['ID']?>" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>
-        </div>
-      </div>
-    </div>
-    <?php }?>
-  </div>
-  <div class="row" style="padding-top:2rem;">
-    <p class="text-center"><a href="<?=URL_Path?>/news" class="btn btn-primary btn-md">ดูทั้งหมด คลิก..!</a></p>  
-  </div>
-</div>
+<?php /* ?>
+<!--<div id="news" class="container">-->
+<!--  <h2 class="text-center">ข่าวสารบริษัท</h2>-->
+<!--  <div class="row">-->
+<!--    <?php foreach($this->news as $news){?>-->
+<!--    <div class="col-xs-12 col-sm-6 col-md-3" style="padding:2rem;">-->
+<!--      <div class="thumbnail">-->
+<!--        <img src="<?php if(empty($news['IMG_URL'])){ echo URL_Public.'/img/news/default.jpg';}else{echo $news['IMG_URL'];}?>" style="width:250px;height:125px">-->
+<!--        <div class="caption">-->
+<!--            <div style="height:15rem;">-->
+<!--              <h4 style="height:4rem;"><?php if(strlen($news['HEADER']) > 100){ echo substr_replace($news['HEADER'], ' ...', 100); }else{ echo $news['HEADER']; }?></h4>-->
+<!--              <p><?php if(strlen($news['TITLE']) > 200){ echo substr_replace($news['TITLE'], ' ...', 200); }else{ echo $news['TITLE']; }?></p>-->
+<!--            </div>-->
+<!--            <p class="text-right"><i class="fa fa-clock-o"></i>&nbsp;<?=$news['DATE']?></p>-->
+<!--            <p class="text-right"><a href="<?=URL_Path?>/news/id/<?=$news['ID']?>" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <?php }?>-->
+<!--  </div>-->
+<!--  <div class="row" style="padding-top:2rem;">-->
+<!--    <p class="text-center"><a href="<?=URL_Path?>/news" class="btn btn-primary btn-md">ดูทั้งหมด คลิก..!</a></p>  -->
+<!--  </div>-->
+<!--</div>-->
+<?php */?>
 
 <div id="services" class="container-fluid text-center">
   <h2>บริการของเรา</h2>
@@ -85,9 +87,9 @@
         <h2>บริษัท ซีดับบลิว เกรท จำกัด.<br><small>ผู้นำด้านการผลิตชิ้นงานตามแบบ</small></h2>
         <h4>
           <strong>บริษัท ซีดับบลิว เกรท จำกัด.</strong>
-          ตั้งอยู่เลขที่ 29/2 หมู่ 1 ตําบลนาตาขวัญ อําเภอเมือง จังหวัดระยอง 21000 บนเนื้อที่จํานวน 5 ไร่ เป็นบริษัทของคนไทย ก่อตั้งโดย คุณชัยวัฒน์ เอกธันยวงศ์  ในปี พ.ศ. 2550 ทุนจดทะเบียน 2,000,000 บาท </h4><br>
+          ตั้งอยู่เลขที่ 29/2 หมู่ 1 ตําบลนาตาขวัญ อําเภอเมือง จังหวัดระยอง 21000 เป็นบริษัทของคนไทย ก่อตั้งโดย คุณชัยวัฒน์ เอกธันยวงศ์  ในปี พ.ศ. 2550 ทุนจดทะเบียน 2,000,000 บาท </h4><br>
         <h4>
-          ให้บริการผลิตชิ้นงานตามแบบทุกชนิด เช่น งานผลิตชิ้นส่วนด้วยเครื่อง CNC ชิ้นส่วนอะไหล่เครื่องจักรกล ชิ้นส่วนรถยนต์และรถมอเตอร์ไซค์ รวมถึง งานกลึง งานกัด งานไส งานปาด งานคว้าน งานมิลลิ่ง งานเจียร งานเจาะรู งานต๊าปเกลียว และงานเชื่อมประกอบ
+          ให้บริการผลิตชิ้นงานตามแบบทุกชนิด เช่น งานผลิตชิ้นส่วนด้วยเครื่อง CNC ชิ้นส่วนอะไหล่เครื่องจักรกล รวมถึง งานกลึง งานกัด งานไส งานมิลลิ่ง งานเจียร งานเจาะรู และงานเชื่อมประกอบ          
         </h4>
       </div>
     </div>
