@@ -5,6 +5,9 @@ class index extends Controller {
         parent:: __construct();
     }
     function index(){
+        $this->loadModel('news');
+        $this->view->news = $this->news->slideNews();
+        
         $this->view->CSSInject[0] = URL_Public . '/css/main.css';
         $this->view->JSInject[0] = URL_Public . '/js/main.js';
         

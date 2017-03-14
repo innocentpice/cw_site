@@ -4,7 +4,7 @@
   <li class="active">[<?=$this->KEYNEWS?>] <?=$this->News['HEADER']?></li>
 </ol><hr>
 <?php if(isset($this->ErrorMsg)){?><div class="alert alert-danger text-center"><?=$this->ErrorMsg?></div><?php }?>
-<form method="post">
+<form method="post" onSubmit="return confirm('ต้องการแก้ไขหรือไม่ ?');">
     <div class="form-group row">
         <div class="col-xs-3 col-sm-2 col-lg-1 text-right">
             <label for="news_header" class="control-label">หัวเรื่อง</label>
@@ -26,6 +26,6 @@
     </div>
     <div class="form-group">
         <input name="news_edit" value="true" type="hidden">
-        <button type="submit" class="btn btn-primary btn-block">เพิ่มข่าวสาร</button>
+        <button type="submit" class="btn btn-primary btn-block">แก้ไข</button>
     </div>
 </form>

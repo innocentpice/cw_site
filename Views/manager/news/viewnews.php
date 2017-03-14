@@ -1,26 +1,33 @@
 <?php if($this->LastPage%10!=0){$lastpage = intval($this->LastPage/10)+1;}else{$lastpage = intval($this->LastPage/10);}?>
 <div class="container-fluid">
     <h2>ข่าวสารบริษัท</h2><hr>         
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>HEADER</th>
-            <th>TITLE</th>
-            <th>DATE</th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php foreach($this->News as $data){?>
-          <tr>
-            <td><?=$data['HEADER']?></td>
-            <td><?=$data['TITLE']?></td>
-            <td><?=$data['DATE']?></td>
-            <td><a href="<?=URL_Path?>/manager/news/<?=$data['ID']?>" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a></td>
-          </tr>
-        <?php }?>
-        </tbody>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>เลขที่</th>
+                <th>หัวข้อ</th>
+                <th>บทนำ</th>
+                <th>วันที่</th>
+                <th>การปฎิบัติ</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php foreach($this->News as $data){?>
+              <tr>
+                <td><?=$data['ID']?></td>
+                <td><?php if(strlen($data['HEADER']) > 150){ echo substr_replace($data['HEADER'], ' ...', 150); }else{ echo $data['HEADER']; }?></td>
+                <td><?php if(strlen($data['TITLE']) > 200){ echo substr_replace($data['TITLE'], ' ...', 200); }else{ echo $data['TITLE']; }?></td>
+                <td><?=$data['DATE']?></td>
+                <td>
+                    <a href="<?=URL_Path?>/manager/news/<?=$data['ID']?>" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
+                    <a onClick="return confirm('คุณต้องการลบหรือไม่ ?');" href="?del=<?=$data['ID']?>" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            <?php }?>
+            </tbody>
+        </table>
+    </div>
     <div class="row text-center">
         <nav aria-label="Page navigation">
           <ul class="pagination">

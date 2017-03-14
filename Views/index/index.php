@@ -23,14 +23,15 @@
 <div id="news" class="container">
   <h2 class="text-center">ข่าวสารบริษัท</h2>
   <div class="row">
-    <?php for($i=1;$i<=4;$i++){?>
+    <?php foreach($this->news as $news){?>
     <div class="col-xs-12 col-sm-6 col-md-3" style="padding:2rem;">
       <div class="thumbnail">
         <img src="http://placehold.it/500x250/EEE">
         <div class="caption">
-            <h4>Thumbnail label</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-            <p class="text-right"><a href="#" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>
+            <h4><?php if(strlen($news['HEADER']) > 200){ echo substr_replace($news['HEADER'], ' ...', 200); }else{ echo $news['HEADER']; }?></h4>
+            <p><?php if(strlen($news['TITLE']) > 350){ echo substr_replace($news['TITLE'], ' ...', 350); }else{ echo $news['TITLE']; }?></p>
+            <p class="text-right"><i class="fa fa-clock-o"></i>&nbsp;<?=$news['DATE']?></p>
+            <p class="text-right"><a href="<?=URL_Path?>/news/id/<?=$news['ID']?>" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>
         </div>
       </div>
     </div>

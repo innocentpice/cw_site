@@ -1,6 +1,6 @@
 <?php
 
-class news extends Model {
+class _news extends Model {
     function __construct(){
         parent::__construct();
     }
@@ -25,7 +25,7 @@ class news extends Model {
     }
     function viewNews($page,$key){
         if(empty($key) && $page != 0){
-            $sql = "SELECT ID,HEADER,TITLE,DATE FROM NEWS ORDER BY ID DESC LIMIT ".(($page-1)*10).",10";
+            $sql = "SELECT ID,HEADER,TITLE,DATE FROM NEWS ORDER BY ID DESC LIMIT ".(($page-1)*10).",12";
             $sth = $this->db->prepare($sql);
             $sth->execute();
             $result = $sth->fetchAll();

@@ -326,7 +326,6 @@ class manager extends Controller {
         }
     }
     
-    
     private function AddNews($header,$title,$content){
         if($header != '' && $title != ''){
             $this->loadModel('news');
@@ -352,8 +351,16 @@ class manager extends Controller {
     
     private function EditNews($key){
         $this->loadModel('news');
-        $this->view->News = $this->news->viewNews(0,$key);
+        if(isset($_POST['news_edit'])){
+            $result = $this->news->editnews($key,@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content']);   
+            if($result = '00000'){
+                $this->view->editMsg = 'success';
+            }else{
+                $this->view->editMsg = 'failed';
+            }
+        }
         
+        $this->view->News = $this->news->viewNews(0,$key);
         $this->view->JSInject[1] = URL_Public.'/js/MCE/textboxio/textboxio.js';
         $this->view->JSInject[2] = URL_Public.'/js/editnews.js';
         
@@ -366,6 +373,9 @@ class manager extends Controller {
     
     private function ViewNews($page=1){
         $this->loadModel('news');
+        if(isset($_GET['del'])){
+            $this->news->delNews($_GET['del']);
+        }
         $data = $this->news->viewNews($page);
         $this->view->News = $data;
         $this->view->CurPage = $page;
