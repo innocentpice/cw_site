@@ -7,10 +7,12 @@
         <?php foreach($this->News as $news){?>
         <div class="col-xs-12 col-sm-6 col-md-3" style="padding:2rem;">
           <div class="thumbnail">
-            <img src="http://placehold.it/500x250/EEE" style="width:250px;height:125px;">
+            <img src="<?php if(empty($news['IMG_URL'])){ echo URL_Public.'/img/news/default.jpg';}else{echo $news['IMG_URL'];}?>" style="width:250px;height:125px">
             <div class="caption">
-                <h4><?php if(strlen($news['HEADER']) > 200){ echo substr_replace($news['HEADER'], ' ...', 200); }else{ echo $news['HEADER']; }?></h4>
-                <p><?php if(strlen($news['TITLE']) > 350){ echo substr_replace($news['TITLE'], ' ...', 350); }else{ echo $news['TITLE']; }?></p>
+                <div style="height:15rem;">
+                    <h4 style="height:4rem;"><?php if(strlen($news['HEADER']) > 100){ echo substr_replace($news['HEADER'], ' ...', 100); }else{ echo $news['HEADER']; }?></h4>
+                    <p><?php if(strlen($news['TITLE']) > 200){ echo substr_replace($news['TITLE'], ' ...', 200); }else{ echo $news['TITLE']; }?></p>
+                </div>
                 <p class="text-right"><i class="fa fa-clock-o"></i>&nbsp;<?=$news['DATE']?></p>
                 <p class="text-right"><a href="<?=URL_Path?>/news/id/<?=$news['ID']?>" class="btn btn-default btn-xs" role="button"><i class="glyphicon glyphicon-click"></i>อ่านเพิ่มเติม</a></p>
             </div>

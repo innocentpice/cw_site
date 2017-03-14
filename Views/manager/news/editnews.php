@@ -21,6 +21,14 @@
             <input type="text" id="news_title" name="news_title" class="form-control" value="<?=$this->News['TITLE']?>">
         </div>
     </div>
+    <div class="form-group row">
+        <div class="col-xs-3 col-sm-2 col-lg-1 text-right">
+            <label for="news_imgUrl" class="control-label">รูปหัวเรื่อง </label>
+        </div>
+        <div class="col-xs-9 col-sm-10 col-lg-11">
+            <input type="text" id="news_imgUrl" name="news_imgUrl" class="form-control" value="<?=$this->News['IMG_URL']?>">
+        </div>
+    </div>
     <div class="form-group">
       <textarea name="news_content" id="editnews" class="form-control" rows="35"><?=$this->News['CONTENT']?></textarea>
     </div>

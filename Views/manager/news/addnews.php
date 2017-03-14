@@ -17,6 +17,14 @@
             <input type="text" id="news_title" name="news_title" class="form-control" value="<?=$_POST['news_title']?>">
         </div>
     </div>
+    <div class="form-group row">
+        <div class="col-xs-3 col-sm-2 col-lg-1 text-right">
+            <label for="news_imgUrl" class="control-label">รูปหัวเรื่อง </label>
+        </div>
+        <div class="col-xs-9 col-sm-10 col-lg-11">
+            <input type="text" id="news_imgUrl" name="news_imgUrl" class="form-control" value="<?=$_POST['news_imgUrl']?>">
+        </div>
+    </div>
     <div class="form-group">
       <textarea name="news_content" id="addnews" class="form-control" rows="35"><?=$_POST['news_content']?></textarea>
     </div>

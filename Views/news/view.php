@@ -11,7 +11,7 @@
     <div>
         <h2><strong><?=$news['HEADER']?></strong></h2>
         <h3><?=$news['TITLE']?></h3>
-        <div>
+        <div style="padding-top:3rem;">
             <?=$news['CONTENT']?>
         </div>
         <p class="text-right"><i class="fa fa-clock-o"></i>&nbsp;<?=$news['DATE']?></p>

@@ -5,7 +5,7 @@ class _news extends Model {
         parent::__construct();
     }
     function slideNews(){
-        $sql = "SELECT ID,HEADER,TITLE,DATE FROM NEWS ORDER BY ID DESC LIMIT 0,4";
+        $sql = "SELECT ID,HEADER,TITLE,DATE,IMG_URL FROM NEWS ORDER BY ID DESC LIMIT 0,4";
         $sth = $this->db->prepare($sql);
         $sth->execute();
         $result = $sth->fetchAll();
@@ -25,7 +25,7 @@ class _news extends Model {
     }
     function viewNews($page,$key){
         if(empty($key) && $page != 0){
-            $sql = "SELECT ID,HEADER,TITLE,DATE FROM NEWS ORDER BY ID DESC LIMIT ".(($page-1)*10).",12";
+            $sql = "SELECT ID,HEADER,TITLE,DATE,IMG_URL FROM NEWS ORDER BY ID DESC LIMIT ".(($page-1)*10).",12";
             $sth = $this->db->prepare($sql);
             $sth->execute();
             $result = $sth->fetchAll();

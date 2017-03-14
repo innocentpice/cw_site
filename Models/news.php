@@ -11,12 +11,13 @@ class news extends Model {
         $result = $sth->fetchAll();
         return $result;
     }
-    function addNews($header,$title,$content){
-        $sql = "INSERT INTO  NEWS ( ID, HEADER, TITLE,CONTENT, DATE, IMG_URL) VALUES ( NULL ,  :HEADER, :TITLE, :CONTENT, CURRENT_TIMESTAMP , NULL )";
+    function addNews($header,$title,$content,$img=NULL){
+        $sql = "INSERT INTO  NEWS ( ID, HEADER, TITLE,CONTENT, DATE, IMG_URL) VALUES ( NULL ,  :HEADER, :TITLE, :CONTENT, CURRENT_TIMESTAMP , :IMG_URL )";
         $NO = array(
             ':HEADER' => $header,
             ':TITLE' => $title,
-            ':CONTENT' => $content
+            ':CONTENT' => $content,
+            ':IMG_URL' => $img
         );
         $sth = $this->db->prepare($sql);
         $sth->execute($NO);
@@ -47,16 +48,18 @@ class news extends Model {
         $result = $sth->fetch();
         return $result[0];
     }
-    function editNews($id,$header,$title,$content){
+    function editNews($id,$header,$title,$content,$img=NULL){
         $sql = "UPDATE NEWS SET ".
             "HEADER =  :HEADER,".
             "TITLE =  :TITLE,".
-            "CONTENT =  :CONTENT".
+            "CONTENT =  :CONTENT,".
+            "IMG_URL = :IMG_URL".
             " WHERE ID = :ID";
         $NO = array(
             ':HEADER' => $header,
             ':TITLE' => $title,
             ':CONTENT' => $content,
+            ':IMG_URL' =>$img,
             ':ID' => $id
         );
         $sth = $this->db->prepare($sql);

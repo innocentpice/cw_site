@@ -315,7 +315,7 @@ class manager extends Controller {
     
     function news($action,$page){
         if($action == 'add'){
-            $this->AddNews(@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content']);
+            $this->AddNews(@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content'],@$_POST['news_imgUrl']);
         }else if($action > 0){
             $this->EditNews($action);
         }else if(empty($action) || $action == 'page'){
@@ -326,10 +326,10 @@ class manager extends Controller {
         }
     }
     
-    private function AddNews($header,$title,$content){
+    private function AddNews($header,$title,$content,$img=NULL){
         if($header != '' && $title != ''){
             $this->loadModel('news');
-            $result = $this->news->AddNews($header,$title,$content);
+            $result = $this->news->AddNews($header,$title,$content,$img);
             if($result == '00000'){
                 $page[0] = 'manager/news/addednews';
                 $this->RederAsPanel($page);
@@ -352,7 +352,7 @@ class manager extends Controller {
     private function EditNews($key){
         $this->loadModel('news');
         if(isset($_POST['news_edit'])){
-            $result = $this->news->editnews($key,@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content']);   
+            $result = $this->news->editnews($key,@$_POST['news_header'],@$_POST['news_title'],@$_POST['news_content'],@$_POST['news_imgUrl']);   
             if($result = '00000'){
                 $this->view->editMsg = 'success';
             }else{
